@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components {
+  .links {
+    @apply text-lg cursor-pointer transition-all hover:text-blue-400
+  }
+
+  .center {
+    @apply flex justify-center items-center
+  }
+
+  .largeDisplay {
+    @apply hidden md:flex
+  }
+}
+
 html,
 body {
   padding: 0;
