@@ -5,15 +5,23 @@
 
 @layer components {
   .links {
-    @apply text-lg cursor-pointer transition-all hover:text-blue-400
+    @apply text-lg cursor-pointer hover:text-blue-400
+  }
+
+  .small-link {
+    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500
   }
 
   .center {
     @apply flex justify-center items-center
   }
 
-  .largeDisplay {
+  .large-display {
     @apply hidden md:flex
+  }
+
+  .small-display {
+    @apply block md:hidden
   }
 }
 
@@ -32,4 +40,5 @@ a {
 
 * {
   box-sizing: border-box;
+  transition: all ease-in-out 1s;
 }
