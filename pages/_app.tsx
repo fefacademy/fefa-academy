@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
+    getInitialValueInEffect: true,
   });
 
   const toggleColorScheme = (value?: ColorScheme) =>
@@ -26,13 +27,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         toggleColorScheme={toggleColorScheme}
       >
         <MantineProvider
+          withGlobalStyles
+          withNormalizeCSS
           theme={{
             fontFamily: "inherit",
             loader: "dots",
             colorScheme,
           }}
         >
-          <Paper className="rounded-none">
+          <Paper className="rounded-none" style={{ minHeight: "100vh" }}>
             <div className="font-sans">
               <Navbar />
               <Component {...pageProps} />
