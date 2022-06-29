@@ -1,10 +1,12 @@
 import {
+  ActionIcon,
   Button,
+  createStyles,
   Divider,
   FloatingTooltip,
   Menu,
+  useMantineColorScheme,
   Text,
-  Tooltip,
 } from "@mantine/core";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -13,12 +15,16 @@ import {
   RocketIcon,
   BookmarkIcon,
   VideoIcon,
+  HamburgerMenuIcon,
+  SunIcon,
+  MoonIcon,
 } from "@modulz/radix-icons";
 
 import Name from "../assets/fefa_name.svg";
 import Image from "next/image";
 import BetaBadge from "./BetaBadge";
 import ThemeButton from "./ThemeButton";
+import { NextLink } from "@mantine/next";
 
 const Navbar = () => {
   const routes = [
@@ -29,17 +35,19 @@ const Navbar = () => {
     ["Blog", "/"],
   ];
 
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
   const [opened, setOpened] = useState(false);
 
   return (
-    <div className="flex items-center justify-between p-5 h-16 md:px-8">
-      <div className="flex items-center space-x-6 align-middle h-full ">
-        <div className="center w-2/3  md:w-1/3 relative">
+    <div className="flex items-center justify-between p-5 h-16 md:px-16">
+      <div className="flex items-center space-x-8 align-middle h-full ">
+        <div className="center w-2/3  lg:w-1/3 relative">
           <Image src={Name} alt="fefa academy" />
           <BetaBadge />
         </div>
 
-        <div className="large-display center space-x-6 ">
+        <div className="large-display center space-x-8 ">
           {routes.map((r) => (
             <div className="small-link " key={r[0]}>
               <Link href={r[1]}>{r[0]}</Link>
@@ -47,11 +55,11 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      <div className="large-display items-center space-x-8 align-middle ">
-        <FloatingTooltip label="Explore">
+      <div className="large-display items-center space-x-10 align-middle ">
+        <FloatingTooltip label="Explore" color={"green"}>
           <RocketIcon height={30} width={30} className="links" />
         </FloatingTooltip>
-        <FloatingTooltip label="Github">
+        <FloatingTooltip label="Github" color={"blue"}>
           <GitHubLogoIcon
             height={30}
             width={30}
@@ -62,35 +70,48 @@ const Navbar = () => {
         <ThemeButton />
       </div>
       <div className="small-display">
-        <Menu>
+        <Menu
+          shadow={"md"}
+          control={
+            <Button variant="subtle">
+              <HamburgerMenuIcon height={20} width={20} />
+            </Button>
+          }
+        >
           <Menu.Label>Content</Menu.Label>
-          <Menu.Item icon={<BookmarkIcon height={14} width={14} />}>
-            Courses
-          </Menu.Item>
-          <Menu.Item icon={<BookmarkIcon height={14} width={14} />}>
-            Lessons
-          </Menu.Item>
-          <Menu.Item icon={<BookmarkIcon height={14} width={14} />}>
-            Series
-          </Menu.Item>
-          <Menu.Item icon={<BookmarkIcon height={14} width={14} />}>
-            Donate
-          </Menu.Item>
-          <Menu.Item icon={<BookmarkIcon height={14} width={14} />}>
-            Blog
-          </Menu.Item>
-
+          {routes.map((r) => (
+            <Menu.Item
+              key={r[0]}
+              icon={<BookmarkIcon height={14} width={14} />}
+              component={NextLink}
+              href="/"
+            >
+              {r[0]}
+            </Menu.Item>
+          ))}
           <Divider />
 
           <Menu.Label>Others</Menu.Label>
-          <Menu.Item icon={<GitHubLogoIcon height={14} width={14} />}>
+          <Menu.Item icon={<RocketIcon height={18} width={18} />} color="green">
+            Explore
+          </Menu.Item>
+          <Menu.Item
+            icon={<GitHubLogoIcon height={18} width={18} />}
+            color="blue"
+          >
             View on Github
           </Menu.Item>
-          <Menu.Item icon={<RocketIcon height={14} width={14} />}>
-            Explore Fefa Academy
-          </Menu.Item>
-          <Menu.Item color="green" icon={<VideoIcon height={14} width={14} />}>
-            Change theme
+          <Menu.Item
+            icon={
+              dark ? (
+                <SunIcon height={18} width={18} />
+              ) : (
+                <MoonIcon height={18} width={18} />
+              )
+            }
+            color={dark ? "yellow" : "grape"}
+          >
+            <span onClick={() => toggleColorScheme()}>Toggle theme</span>
           </Menu.Item>
         </Menu>
       </div>
