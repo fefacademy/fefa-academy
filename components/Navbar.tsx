@@ -15,7 +15,7 @@ import {
   VideoIcon,
 } from "@modulz/radix-icons";
 
-import Name from "../assets/fefa_name_1.svg";
+import Name from "../assets/fefa_name.svg";
 import Image from "next/image";
 import BetaBadge from "./BetaBadge";
 import ThemeButton from "./ThemeButton";
