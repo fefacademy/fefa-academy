@@ -16,12 +16,16 @@
     @apply flex justify-center items-center
   }
 
-  .large-display {
+  .medium-display {
     @apply hidden md:flex
   }
 
+  .large-display {
+    @apply hidden lg:flex
+  }
+
   .small-display {
-    @apply block md:hidden
+    @apply block lg:hidden
   }
 }
 
