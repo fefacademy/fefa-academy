@@ -6,9 +6,9 @@ const Showcase = () => {
   const dark = colorScheme === "dark";
   const videoSrc = dark ? "/videos/fefa_dark.mp4" : "/videos/fefa_light.mp4";
   return (
-    <div className="w-full h-full md:h-[calc(100vh-80px)] flex justify-between flex-col md:flex-row p-8 md:px-16 items-center">
-      <div className="w-full md:w-1/2 space-y-8">
-        <Text className="text-5xl leading-[58px] md:text-[3.5rem] font-bold md:leading-[70px]">
+    <div className="w-full space-y-6 md:space-y-0 md:space-x-6 h-full md:h-[calc(100vh-100px)] flex justify-between flex-col md:flex-row p-8 md:px-16 items-center pb-0 md:pb-5">
+      <div className="w-full md:w-1/2 space-y-5 md:space-y-6 ">
+        <Text className="text-5xl leading-[58px] md:text-[3.3rem] font-bold md:leading-[65px]">
           Providing access to free and high quality content for everyone.
         </Text>
         <Text color={"gray"} className="text-2xl">
@@ -19,13 +19,13 @@ const Showcase = () => {
           Start Learning
         </Button>
       </div>
-      <div className="center w-full md:w-1/2 p-0 md:p-5">
+      <div className="center w-full md:w-1/2 p-0">
         <video
           autoPlay
           loop
           src={videoSrc}
           muted
-          className="rounded-2xl"
+          className="rounded-2xl h-full"
         ></video>
       </div>
     </div>
