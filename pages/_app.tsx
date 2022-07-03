@@ -35,8 +35,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             colorScheme,
           }}
         >
-          <Paper className="rounded-none" style={{ minHeight: "100vh" }}>
-            <div className="font-sans">
+          <Paper className="rounded-none">
+            <div className="font-sans w-full ">
               <Navbar />
               <Component {...pageProps} />
             </div>
