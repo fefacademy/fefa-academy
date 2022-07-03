@@ -17,8 +17,14 @@ import {
 } from "@modulz/radix-icons";
 import Image from "next/image";
 import { NextLink } from "@mantine/next";
-import { BiVideo, BiBook, BiMoney, BiLibrary } from "react-icons/bi";
-import { CgPlayList } from "react-icons/cg";
+import {
+  BiVideo,
+  BiBook,
+  BiMoney,
+  BiLibrary,
+  BiBookContent,
+} from "react-icons/bi";
+import { CgPlayList, CgTv } from "react-icons/cg";
 
 import Name from "../assets/fefa_name.svg";
 import BetaBadge from "./BetaBadge";
@@ -76,7 +82,7 @@ const Navbar = () => {
               let size = 20;
               let icon =
                 r[0] == "Lessons" ? (
-                  <BiVideo size={size} />
+                  <CgTv size={size} />
                 ) : r[0] == "Series" ? (
                   <CgPlayList size={size} />
                 ) : r[0] == "Donate" ? (
@@ -84,7 +90,7 @@ const Navbar = () => {
                 ) : r[0] == "Courses" ? (
                   <BiLibrary size={size} />
                 ) : (
-                  <BiBook size={size} />
+                  <BiBookContent size={size} />
                 );
               return (
                 <Menu.Item key={r[0]} icon={icon} component={NextLink} href="/">
