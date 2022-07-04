@@ -15,7 +15,7 @@ const TitleCard: React.FC<TitleCardProps> = (props) => {
   const dark = colorScheme === "dark";
   return (
     <Card
-      shadow={"xl"}
+      shadow={"xs"}
       className={`flex items-center space-x-5 rounded-lg ${
         !dark && "border-2"
       }`}
