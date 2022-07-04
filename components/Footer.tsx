@@ -82,8 +82,8 @@ const Footer = () => {
             <CgYoutube size={40} width={30} />
           </NextLink>
         </section>
-        <div className="center pt-1 pb-3">
-          <span className="text-xl">&copy; 2022 Fefa Academy</span>
+        <div className="center py-3">
+          <span className="font-bold">&copy; 2022 Fefa Academy</span>
         </div>
       </div>
     </MantineFooter>
