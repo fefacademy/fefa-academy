@@ -9,7 +9,7 @@ const Showcase = () => {
     <div className="w-full space-y-6 lg:space-y-0 lg:space-x-6 h-full lg:h-[calc(100vh-100px)] flex justify-between flex-col lg:flex-row p-8 md:px-10 lg:px-16 items-center pb-0 lg:pb-5">
       <div className="w-full lg:w-1/2 space-y-5 md:space-y-8 ">
         <Text className="text-5xl leading-[58px] md:text-[3.3rem] font-bold md:leading-[70px]">
-          Providing access to free and high quality content for everyone.
+          Providing access to free and high quality education for everyone.
         </Text>
         <Text color={"gray"} className="text-2xl">
           An online academy with a focus on making knowledge available to all,
