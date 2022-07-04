@@ -32,11 +32,11 @@ import ThemeButton from "./ThemeButton";
 
 const Navbar = () => {
   const routes = [
-    ["Courses", "/"],
-    ["Lessons", "/"],
-    ["Series", "/"],
-    ["Donate", "/"],
-    ["Blog", "/"],
+    ["Courses", "/courses"],
+    ["Lessons", "/lessons"],
+    ["Series", "/series"],
+    ["Donate", "/donate"],
+    ["Blog", "/blog"],
   ];
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -47,7 +47,9 @@ const Navbar = () => {
       <div className={`flex items-center justify-between p-5 h-20 md:px-16`}>
         <div className="flex items-center space-x-8 align-middle h-full ">
           <div className="center w-2/3  lg:w-1/3 relative">
-            <Image src={Name} alt="fefa academy" />
+            <NextLink href="/">
+              <Image src={Name} alt="fefa academy" />
+            </NextLink>
             <BetaBadge />
           </div>
 
