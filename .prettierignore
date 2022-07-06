@@ -1,2 +1,5 @@
-.next
+.next/
+.husky/
+.devcontainer/
+.vscode/
 *.MD
