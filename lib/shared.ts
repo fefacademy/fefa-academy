@@ -21,4 +21,16 @@ export const useStyles = createStyles((theme) => ({
         ? theme.colors.dark[6]
         : theme.colors.gray[2],
   },
+
+  cardSection: {
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[5]
+        : theme.colors.gray[7],
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: theme.spacing.xl,
+    color: "white",
+  },
 }));
