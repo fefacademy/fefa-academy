@@ -1,31 +1,36 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap"); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .links {
-    @apply text-lg cursor-pointer hover:text-blue-400
+    @apply text-lg cursor-pointer hover:text-blue-400;
   }
 
   .small-link {
-    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500
+    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500;
   }
 
   .center {
-    @apply flex justify-center items-center
+    @apply flex justify-center items-center;
   }
 
   .medium-display {
-    @apply hidden md:flex
+    @apply hidden md:flex;
   }
 
   .large-display {
-    @apply hidden lg:flex
+    @apply hidden lg:flex;
   }
 
   .small-display {
-    @apply block lg:hidden
+    @apply block lg:hidden;
+  }
+
+  .btn {
+    @apply tracking-wide;
   }
 }
 
@@ -44,4 +49,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.roboto {
+  font-family: "Roboto Slab", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

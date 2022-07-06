@@ -1,15 +1,105 @@
-import React from "react";
 import {
-  Divider,
-  List,
-  ListItem,
+  ActionIcon,
+  Container,
+  createStyles,
   Footer as MantineFooter,
+  Group,
+  Text,
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
-import { GitHubLogoIcon, TwitterLogoIcon } from "@modulz/radix-icons";
-import { CgFacebook, CgInstagram, CgSlack, CgYoutube } from "react-icons/cg";
+import Image from "next/image";
+import {
+  BrandDiscord,
+  BrandGithub,
+  BrandInstagram,
+  BrandSlack,
+  BrandTwitter,
+  BrandYoutube,
+} from "tabler-icons-react";
+import Logo from "../assets/fefa_logo.png";
+
+const useStyles = createStyles((theme) => ({
+  footer: {
+    marginTop: 120,
+    paddingTop: theme.spacing.xl * 2,
+    paddingBottom: theme.spacing.xl * 2,
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[6]
+        : theme.colors.gray[0],
+    borderTop: `1px solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
+    }`,
+  },
+
+  inner: {
+    display: "flex",
+    justifyContent: "space-between",
+
+    [theme.fn.smallerThan("sm")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  },
+
+  afterFooter: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: theme.spacing.xl,
+    paddingTop: theme.spacing.xl,
+    paddingBottom: theme.spacing.xl,
+    borderTop: `1px solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]
+    }`,
+
+    [theme.fn.smallerThan("sm")]: {
+      flexDirection: "column",
+    },
+  },
+
+  social: {
+    [theme.fn.smallerThan("sm")]: {
+      marginTop: theme.spacing.xs,
+    },
+  },
+
+  groups: {
+    display: "flex",
+    flexWrap: "wrap",
+
+    [theme.fn.smallerThan("sm")]: {
+      display: "none",
+    },
+  },
+
+  link: {
+    display: "block",
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[1]
+        : theme.colors.gray[6],
+    fontSize: theme.fontSizes.md,
+    paddingTop: 3,
+    paddingBottom: 3,
+
+    "&:hover": {
+      textDecoration: "underline",
+      color: theme.colors.blue[4],
+    },
+  },
+
+  title: {
+    fontSize: theme.fontSizes.xl,
+    fontWeight: 700,
+    marginBottom: theme.spacing.xs / 2,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+  },
+}));
 
 const Footer = () => {
+  const { classes } = useStyles();
+
   const content = [
     ["Courses", "#"],
     ["Lessons", "#"],
@@ -42,50 +132,66 @@ const Footer = () => {
       list: links,
     },
   ];
-  return (
-    <MantineFooter height={"100%"} className="mt-5">
-      <div className="h-full md:h-[20vh] lg:h-[40vh]">
-        <section className="grid grid-cols-2 md:grid-cols-3 justify-items-center gap-5 md:gap-0 p-8 md:p-10 md:px-14">
-          {lists.map((l) => (
-            <List className="text-center" key={l.title}>
-              <ListItem className="text-2xl font-semibold mb-2">
-                {l.title}{" "}
-              </ListItem>
-              {l.list.map((c) => (
-                <ListItem key={c[0]} className="links text-lg hover:underline">
-                  <NextLink href={c[1]}>{c[0]}</NextLink>
-                </ListItem>
-              ))}
-            </List>
-          ))}
-        </section>
-        <div className="center">
-          <Divider className="w-1/3" />
-        </div>
-        <section className="center space-x-6 pt-3">
-          <NextLink href={"#"} className="links">
-            <GitHubLogoIcon height={30} width={30} />
-          </NextLink>
-          <NextLink href={"#"} className="links">
-            <TwitterLogoIcon height={30} width={30} />
-          </NextLink>
-          <NextLink href={"#"} className="links">
-            <CgFacebook size={30} />
-          </NextLink>
-          <NextLink href={"#"} className="links">
-            <CgInstagram size={30} />
-          </NextLink>
-          <NextLink href={"#"} className="links">
-            <CgSlack size={30} />
-          </NextLink>
-          <NextLink href={"#"} className="links">
-            <CgYoutube size={40} width={30} />
-          </NextLink>
-        </section>
-        <div className="center py-3">
-          <span className="font-bold">&copy; 2022 Fefa Academy</span>
-        </div>
+
+  const groups = lists.map((group) => {
+    const links = group.list.map((link, index) => (
+      <Text
+        key={index}
+        className={classes.link}
+        component={NextLink}
+        href={link[1]}
+      >
+        {link[0]}
+      </Text>
+    ));
+
+    return (
+      <div className="w-[160px]" key={group.title}>
+        <Text className={classes.title}>{group.title}</Text>
+        {links}
       </div>
+    );
+  });
+
+  return (
+    <MantineFooter height={"100%"} className={`${classes.footer} `}>
+      <Container className={`${classes.inner} `}>
+        <div className="flex flex-col space-y-3">
+          <div className="max-w-[150px] ">
+            <Image alt="fefa_academy" src={Logo}></Image>
+          </div>
+          <Text size="xl" weight={500}>
+            Free education for all
+          </Text>
+        </div>
+        <div className={classes.groups}>{groups}</div>
+      </Container>
+      <Container className={classes.afterFooter}>
+        <Text color="dimmed" size="md">
+          © 2022 Fefa Academy. All rights reserved.
+        </Text>
+
+        <Group spacing={8} className={classes.social} position="right" noWrap>
+          <ActionIcon size="lg">
+            <BrandGithub size={25} />
+          </ActionIcon>
+          <ActionIcon size="lg">
+            <BrandTwitter size={25} />
+          </ActionIcon>
+          <ActionIcon size="lg">
+            <BrandSlack size={25} />
+          </ActionIcon>
+          <ActionIcon size="lg">
+            <BrandYoutube size={25} />
+          </ActionIcon>
+          <ActionIcon size="lg">
+            <BrandDiscord size={25} />
+          </ActionIcon>
+          <ActionIcon size="lg">
+            <BrandInstagram size={25} />
+          </ActionIcon>
+        </Group>
+      </Container>
     </MantineFooter>
   );
 };

@@ -1,10 +1,9 @@
 import { Card, Text, useMantineColorScheme } from "@mantine/core";
 import { NextLink } from "@mantine/next";
 import React from "react";
-import { IconType } from "react-icons";
 
 interface TitleCardProps {
-  icon: IconType;
+  icon: React.ReactNode;
   title: string;
   body: string;
   link: string;
@@ -20,17 +19,17 @@ const TitleCard: React.FC<TitleCardProps> = (props) => {
         !dark && "border-2"
       }`}
     >
-      <props.icon size={60} />
+      {props.icon}
       <div className="h-full border-[1px] rounded-md"></div>
       <div className="space-y-2">
         <Text
-          className="text-xl font-medium underline text-blue-500 hover:opacity-70"
+          className="text-lg roboto hover:underline text-blue-500 transition-all"
           component={NextLink}
           href={props.link}
         >
           {props.title}
         </Text>
-        <Text className="font-medium">{props.body}</Text>
+        <Text>{props.body}</Text>
       </div>
     </Card>
   );

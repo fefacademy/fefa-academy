@@ -1,18 +1,19 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import {
   ColorScheme,
   ColorSchemeProvider,
   MantineProvider,
   Paper,
 } from "@mantine/core";
-import Navbar from "../components/Navbar";
 import { useHotkeys, useLocalStorageValue } from "@mantine/hooks";
+import type { AppProps } from "next/app";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
-    key: "mantine-color-scheme",
-    defaultValue: "light",
+    key: "fefa-academy-color-scheme",
+    defaultValue: "dark",
     getInitialValueInEffect: true,
   });
 
@@ -36,9 +37,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         >
           <Paper className="rounded-none">
-            <div className="font-sans w-full ">
+            <div className="font-sans ">
               <Navbar />
               <Component {...pageProps} />
+              <Footer />
             </div>
           </Paper>
         </MantineProvider>
