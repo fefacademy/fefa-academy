@@ -1,8 +1,16 @@
-import { Button, Card, CardSection, Chip, Divider, Text } from "@mantine/core";
+import {
+  Badge,
+  Button,
+  Card,
+  CardSection,
+  Divider,
+  Group,
+  Text,
+} from "@mantine/core";
 import React from "react";
 
 import Image from "next/image";
-import { useState } from "react";
+import { Download, Eye } from "tabler-icons-react";
 import courseImage from "../assets/course_1.jpg";
 
 interface CourseProps {
@@ -29,7 +37,7 @@ const CourseCard: React.FC<Course> = ({ course }) => {
   const stats = [
     {
       title: "📺 Length:",
-      value: c.lessonCount + " videos",
+      value: c.lessonCount + " lessons",
     },
     {
       title: "🕖 Time:",
@@ -37,7 +45,7 @@ const CourseCard: React.FC<Course> = ({ course }) => {
     },
     {
       title: "🛠 Status:",
-      value: "Progress",
+      value: c.status,
     },
   ];
 
@@ -47,9 +55,9 @@ const CourseCard: React.FC<Course> = ({ course }) => {
         {stat.title}
       </Text>
       {stat.title == "🛠 Status:" ? (
-        <Chip color={stat.value == "Progress" ? "orange" : "green"} size="xs">
+        <Badge color={stat.value == "In Progress" ? "red" : "green"} size="sm">
           {stat.value}
-        </Chip>
+        </Badge>
       ) : (
         <Text weight={500} size="md">
           {stat.value}
@@ -57,9 +65,6 @@ const CourseCard: React.FC<Course> = ({ course }) => {
       )}
     </div>
   ));
-
-  const tags = c.tags.map((t) => <Chip key={t}>{t} </Chip>);
-  const [opened, setOpened] = useState(false);
 
   return (
     <Card
@@ -83,33 +88,23 @@ const CourseCard: React.FC<Course> = ({ course }) => {
           {" "}
           {c.title}{" "}
         </Text>
-        <Text size="md" weight={"lighter"} className="roboto">
+        <Text size="md" lineClamp={4}>
           {c.intro}
         </Text>
-      </CardSection>
-      <CardSection>
-        <Divider />
-      </CardSection>
-      {/* <div className="my-3">
         <Group className="justify-between">
-          <Text size="xl">Course Tags: </Text>
-          <Button
-            onClick={() => setOpened((o) => !o)}
-            variant="outline"
-            size="xs"
-            radius={14}
-            color="teal"
-          >
-            {opened ? "Hide" : "Show"}
-          </Button>
+          <Group>
+            <Eye />
+            <Text>1,000</Text>
+          </Group>
+          <Group>
+            <Download />
+            <Text>4,000</Text>
+          </Group>
         </Group>
-        <Collapse in={opened} className="my-3">
-          <Chips color={"grape"}>{tags}</Chips>
-        </Collapse>
-      </div>
+      </CardSection>
       <CardSection>
         <Divider />
-      </CardSection> */}
+      </CardSection>
       <div className="mt-5 center justify-between">
         <Button variant="outline" size="md">
           Course Details
