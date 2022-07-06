@@ -12,6 +12,7 @@ import {
   BrandDiscord,
   BrandGithub,
   BrandInstagram,
+  BrandSlack,
   BrandTwitter,
   BrandYoutube,
 } from "tabler-icons-react";
@@ -153,7 +154,7 @@ const Footer = () => {
   });
 
   return (
-    <MantineFooter height={"100%"} className={classes.footer}>
+    <MantineFooter height={"100%"} className={`${classes.footer} `}>
       <Container className={`${classes.inner} `}>
         <div className="flex flex-col space-y-3">
           <div className="max-w-[150px] ">
@@ -176,6 +177,9 @@ const Footer = () => {
           </ActionIcon>
           <ActionIcon size="lg">
             <BrandTwitter size={25} />
+          </ActionIcon>
+          <ActionIcon size="lg">
+            <BrandSlack size={25} />
           </ActionIcon>
           <ActionIcon size="lg">
             <BrandYoutube size={25} />
