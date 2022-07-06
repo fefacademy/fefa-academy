@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import { NextLink } from "@mantine/next";
 import {
+  AvatarIcon,
   GitHubLogoIcon,
   HamburgerMenuIcon,
   MoonIcon,
@@ -39,7 +40,7 @@ const Navbar = () => {
   return (
     <Paper className="z-30 rounded-none sticky top-0 w-full" shadow={"lg"}>
       <Container className="max-w-[85rem]">
-        <div className={`flex items-center justify-between p-5 h-20 md:px-16`}>
+        <div className={`flex items-center justify-between p-5 h-20 lg:px-16`}>
           <div className="flex items-center space-x-8 align-middle h-full ">
             <div className="center w-2/3  lg:w-1/3 relative">
               <NextLink href="/">
@@ -62,6 +63,9 @@ const Navbar = () => {
             </Tooltip>
             <Tooltip label="Github" color={"blue"} withArrow>
               <GitHubLogoIcon height={30} width={30} className="links" />
+            </Tooltip>
+            <Tooltip label="Login" color={"grape"} withArrow>
+              <AvatarIcon height={32} width={32} className="links" />
             </Tooltip>
             <ThemeButton />
           </div>
