@@ -6,6 +6,7 @@ import {
 } from "@mantine/core";
 import { useHotkeys, useLocalStorageValue } from "@mantine/hooks";
 import type { AppProps } from "next/app";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "../styles/globals.css";
 
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <div className="font-sans ">
               <Navbar />
               <Component {...pageProps} />
+              <Footer />
             </div>
           </Paper>
         </MantineProvider>
