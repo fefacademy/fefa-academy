@@ -47,7 +47,7 @@ const courses = [
       "ci/cd",
     ],
     courseSize: "1.5GB",
-    status: "In Progress",
+    status: "Published",
     courseImageUrl: "",
     authorImageUrl: "",
     contentUrl: "",
