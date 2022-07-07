@@ -28,13 +28,13 @@ const CustomCard: React.FC<CardProps> = (p) => {
 
   return (
     <Card
-      className={`${classes.customCard}  rounded-none shadow-xl ${p.radius}`}
+      className={`${classes.customCard} rounded-2xl lg:rounded-none shadow-xl ${p.radius}`}
     >
       <CardSection className={` ${classes.cardSection} bg-cyan-900 space-y-5`}>
         <Text className={`text-4xl roboto font-medium ${p.color}`}>
           {p.price}
         </Text>
-        <Text className="text-2xl">{p.slug} </Text>
+        <Text className={`text-2xl ${p.color} text-center`}>{p.slug} </Text>
       </CardSection>
       <div className="pt-3">
         <Text className="text-center text-xl font-medium mb-3">
@@ -56,8 +56,8 @@ const DonatePage = () => {
     {
       price: "$1-$49",
       slug: "Thank you, Kemosabe!",
-      color: "text-amber-700",
-      radius: "rounded-tl-2xl rounded-bl-2xl",
+      color: "text-[#CD7F32]",
+      radius: "lg:rounded-tl-2xl lg:rounded-bl-2xl",
       items: [
         "Our sincerest gratitude. Thank you for taking this chance to support us! We really appreciate it.",
         "The warm feeling you get in your heart after doing something nice. 😁",
@@ -66,8 +66,8 @@ const DonatePage = () => {
     {
       price: "$100+",
       slug: "Ask and you shall receive!",
-      color: "text-gray-300",
-      radius: "rounded-2xl shadow-xl z-10",
+      color: "text-[#A59C94]",
+      radius: "lg:rounded-2xl shadow-xl z-10",
       items: [
         "You have paid the iron price, and for that, you may request any course of your choosing and if it's within our power, the course will be created.",
         "If you so wish, you may request one on one video sessions and also participate in any video meetings that may take place.",
@@ -77,17 +77,17 @@ const DonatePage = () => {
     {
       price: "$50-$99",
       slug: "Welcome to the club, Mate!",
-      color: "text-yellow-500",
-      radius: "rounded-tr-2xl rounded-br-2xl",
+      color: "text-[#d4af37]",
+      radius: "lg:rounded-tr-2xl lg:rounded-br-2xl",
       items: [
-        "For the gold price, you get access to our Slack server. The slack server is private and is only used for management, meaning you'll be involved in making managerial decisions.",
+        "For the gold price, you get access to our slack channel. The channel is private and is only used for management, meaning you'll be involved in making managerial decisions.",
       ],
     },
   ];
 
   return (
-    <div className={`h-full min-h-[100vh] p-10`}>
-      <Container className="max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-0 items-center justify-center p-5">
+    <div className={`h-full p-5 lg:p-10`}>
+      <Container className="p-0 max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-0 items-center justify-center lg:p-5">
         {variants.map((v) => {
           const { color, items, price, radius, slug } = v;
 
