@@ -152,16 +152,16 @@ const Home: NextPage = () => {
                 From the creator
               </Text>
               <Text className={`text-xl`}>
-                Hi, 👋. I&apos;m Victor Ndaba, the founder of this little
-                academy. Fefa is like my love child: the Ruby to my Matz, the
+                Hi, 👋. I&apos;m Victor Ndaba, the founder of this small
+                academy. Fefa is like my perfect child: the Ruby to my Matz, the
                 GOT to my HBO. I created it because I don&apos;t believe that
                 free and high quality have to be mutually exclusive. Among other
                 things, I am primarily a self-taught software developer and I
-                have taken a lot of courses to get to where I am today.
-                There&apos;s always this pattern where most free courses only
-                offer you so much and the really good ones are not free, and
-                even then, they may not be enough. Which is why Fefa is here, to
-                break the wheel 😉.
+                have had to take a lot of courses to get to where I am today. I
+                noticed that there&apos;s always this pattern where most free
+                courses only offer you so much and the really good ones are not
+                free, and even then, they may not be enough. Which is why Fefa
+                is here, to break the wheel 😉.
               </Text>
             </div>
           </Container>
