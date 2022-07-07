@@ -69,6 +69,10 @@ const Faq = () => {
       "How is the downloaded course structured?",
       'Once downloaded, a course comes in a very specific folder structure. For obvious reasons, we don\'t provide course streaming as in platforms such as udemy, but we offer you the next best thing. Rather than just providing the bare course lessons, every course comes "wrapped" in a web app structure that provides a rich experience with features like progress tracking integrated into it. Think of it as an offline udemy-like site, that you open from a simple index.html . Check out this video to learn more.',
     ],
+    [
+      "Isn't all this too good to be true?",
+      "Well, yes. But actually no. In all honesty, you are never going to find a course that is going to give you everything, but we sure as hell do try. However, no matter how many courses you take and despite their quality, the only way you will truly become an expert in anything is by doing it yourself, over and over again, until it finally sticks",
+    ],
   ];
   return (
     <div className="p-5 md:px-16 lg:px-36">
