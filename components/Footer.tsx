@@ -11,7 +11,7 @@ import Image from "next/image";
 import {
   BrandDiscord,
   BrandGithub,
-  BrandInstagram,
+  BrandReddit,
   BrandSlack,
   BrandTwitter,
   BrandYoutube,
@@ -156,7 +156,7 @@ const Footer = () => {
   return (
     <MantineFooter height={"100%"} className={`${classes.footer} `}>
       <Container className={`${classes.inner} `}>
-        <div className="flex flex-col space-y-3">
+        <div className="flex flex-col space-y-3 items-center">
           <div className="max-w-[150px] ">
             <Image alt="fefa_academy" src={Logo}></Image>
           </div>
@@ -188,7 +188,7 @@ const Footer = () => {
             <BrandDiscord size={25} />
           </ActionIcon>
           <ActionIcon size="lg">
-            <BrandInstagram size={25} />
+            <BrandReddit size={25} />
           </ActionIcon>
         </Group>
       </Container>
