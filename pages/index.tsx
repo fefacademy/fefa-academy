@@ -13,6 +13,7 @@ import {
   Notification,
 } from "tabler-icons-react";
 import Author from "../assets/author.jpg";
+import Faq from "../components/Faq";
 import Showcase from "../components/Showcase";
 import SupportCard from "../components/SupportCard";
 import TitleCard from "../components/TitleCard";
@@ -41,7 +42,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Container className="max-w-7xl">
+        <Container className="max-w-7xl p-0">
           {/* showcase */}
           <Showcase />
 
@@ -69,8 +70,8 @@ const Home: NextPage = () => {
         </Container>
 
         {/* ways to support */}
-        <section className="w-full my-5">
-          <Container className="max-w-7xl center flex-col">
+        <section className="w-full my-10">
+          <Container className="max-w-7xl center flex-col p-0 md:p-3">
             <Text className="text-4xl font-medium roboto text-center mb-5">
               Ways you can support us
             </Text>
@@ -132,9 +133,9 @@ const Home: NextPage = () => {
         </section>
 
         {/* From the creator section */}
-        <section className={`w-full my-5 ${classes.showcase}`}>
-          <Container className="max-w-7xl flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 lg:space-y-0">
-            <div className="w-full lg:w-1/2 p-10 center flex-col">
+        <section className={`w-full my-10 ${classes.showcase}`}>
+          <Container className="max-w-7xl p-0 md:p-5 flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 lg:space-y-0">
+            <div className="w-full lg:w-1/2 pt-5 lg:p-10 center flex-col">
               <div className="w-1/2 mb-3">
                 <Image
                   alt="victor ndaba"
@@ -165,17 +166,21 @@ const Home: NextPage = () => {
             </div>
           </Container>
         </section>
+
+        <Container className="max-w-7xl p-0 my-10">
+          <Text className="text-center text-4xl font-medium roboto">
+            Frequently asked questions
+          </Text>
+          <Faq />
+        </Container>
         {/* Technologies and subjects */}
         {/* Fefa roadmap */}
-        {/* ways to support */}
 
-        {/* share links on socials, github sponsors, patreon and buy me a coffee, donations, feedback and surveys, contributing, keep seeding */}
         {/* fefa hero image */}
         {/* signup/in */}
         {/* manifesto */}
+        {/* newsletter */}
 
-        {/* from the author */}
-        {/* faq */}
         {/* call for bloggers and content authors */}
       </main>
     </div>
