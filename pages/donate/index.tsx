@@ -121,7 +121,7 @@ const DonatePage = () => {
         component={NextLink}
         href={d.link}
         key={i}
-        className="h-full flex flex-row space-x-4 items-center hover:scale-105 transition-all cursor-pointer"
+        className="h-full flex flex-row space-x-4 items-center hover:scale-105 transition-transform cursor-pointer"
       >
         {d.icon}
         <div className="h-6 opacity-90 border-[1px] rounded-md"></div>
@@ -133,7 +133,7 @@ const DonatePage = () => {
   return (
     <div className={`h-full p-5 lg:p-10`}>
       <Container className="p-0 max-w-7xl ">
-        <section className="center flex-col lg:flex-row mb-8 p-5 space-x-5">
+        <section className="center flex-col lg:flex-row mb-8 p-5 space-y-8 lg:space-y-0 lg:space-x-5">
           <div className="w-full lg:w-1/2 space-y-3">
             <Text className="text-5xl font-medium roboto mb-5">
               Help us grow
@@ -153,7 +153,7 @@ const DonatePage = () => {
           </div>
           <div className="w-full lg:w-1/2 space-y-5 lg:px-10">{platforms}</div>
         </section>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-0 items-center justify-center lg:p-5">
+        <div className="grid grid-cols-1 md:px-8 lg:px-0 lg:grid-cols-3 gap-5 lg:gap-0 items-center justify-center lg:p-5">
           {variants.map((v, i) => {
             const { color, items, price, radius, slug } = v;
 
