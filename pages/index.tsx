@@ -1,4 +1,4 @@
-import { Button, Container, Text } from "@mantine/core";
+import { Button, Card, Container, Text } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -32,6 +32,42 @@ const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
 const Home: NextPage = () => {
   const { classes } = useStyles();
   const iconSize = 60;
+
+  const data = [
+    [
+      "Are you a content developer?",
+      "Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
+    ],
+    ["", ""],
+    ["", ""],
+    [
+      "Are you a blogger?",
+      "Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
+    ],
+    [
+      "Are you an expert in your field?",
+      "Learn how you can become part of Fefa's peer reviewers.Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
+    ],
+  ];
+
+  const support = data.map((d, i) => {
+    const border = i % 2 == 0 ? "border-r-4" : "";
+
+    return (
+      <div key={i} className={`h-full ${border} border-cyan-900`}>
+        {d[0] && (
+          <Card
+            className={`text-2xl ${classes.cardSection} bg-cyan-900 items-start rounded-none`}
+            p={"sm"}
+            shadow="xl"
+          >
+            {d[0]}
+          </Card>
+        )}
+        <p className="text-xl p-3">{d[1]}</p>
+      </div>
+    );
+  });
 
   return (
     <div>
@@ -67,6 +103,10 @@ const Home: NextPage = () => {
               icon={<Notification size={60} />}
             />
           </section>
+        </Container>
+
+        <Container className="my-8 max-w-7xl lg:px-16 grid grid-cols-1 md:grid-cols-2 items-center justify-center">
+          {support}
         </Container>
 
         {/* ways to support */}

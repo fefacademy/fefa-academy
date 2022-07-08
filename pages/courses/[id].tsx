@@ -7,7 +7,9 @@ const CourseIndex = () => {
   // reviews
   // authors info
   // course tags
-  //   projects images, what you'll build
+  // projects images, what you'll build
+  // resources
+  // get the course cert
   return <div>CourseIndex</div>;
 };
 
