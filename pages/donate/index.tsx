@@ -1,6 +1,13 @@
 import { Card, CardSection, Container, Text } from "@mantine/core";
+import { NextLink } from "@mantine/next";
 import { CheckCircledIcon } from "@modulz/radix-icons";
 import React from "react";
+import {
+  BrandCoinbase,
+  BrandGithub,
+  BrandPatreon,
+  BrandPaypal,
+} from "tabler-icons-react";
 import { useStyles } from "../../lib/shared";
 
 const Item: React.FC<{ children: React.ReactNode }> = (p) => {
@@ -28,13 +35,13 @@ const CustomCard: React.FC<CardProps> = (p) => {
 
   return (
     <Card
-      className={`${classes.customCard}  rounded-none shadow-xl ${p.radius}`}
+      className={`${classes.customCard} rounded-2xl lg:rounded-none shadow-xl ${p.radius}`}
     >
       <CardSection className={` ${classes.cardSection} bg-cyan-900 space-y-5`}>
         <Text className={`text-4xl roboto font-medium ${p.color}`}>
           {p.price}
         </Text>
-        <Text className="text-2xl">{p.slug} </Text>
+        <Text className={`text-2xl ${p.color} text-center`}>{p.slug} </Text>
       </CardSection>
       <div className="pt-3">
         <Text className="text-center text-xl font-medium mb-3">
@@ -56,18 +63,18 @@ const DonatePage = () => {
     {
       price: "$1-$49",
       slug: "Thank you, Kemosabe!",
-      color: "text-amber-700",
-      radius: "rounded-tl-2xl rounded-bl-2xl",
+      color: "text-[#CD7F32]",
+      radius: "lg:rounded-tl-2xl lg:rounded-bl-2xl",
       items: [
         "Our sincerest gratitude. Thank you for taking this chance to support us! We really appreciate it.",
-        "The warm feeling you get in your heart after doing something nice. 😁",
+        "The warm feeling you get in your heart after doing something really nice. 😁",
       ],
     },
     {
       price: "$100+",
       slug: "Ask and you shall receive!",
-      color: "text-gray-300",
-      radius: "rounded-2xl shadow-xl z-10",
+      color: "text-[#A59C94]",
+      radius: "lg:rounded-2xl shadow-xl z-10",
       items: [
         "You have paid the iron price, and for that, you may request any course of your choosing and if it's within our power, the course will be created.",
         "If you so wish, you may request one on one video sessions and also participate in any video meetings that may take place.",
@@ -77,31 +84,91 @@ const DonatePage = () => {
     {
       price: "$50-$99",
       slug: "Welcome to the club, Mate!",
-      color: "text-yellow-500",
-      radius: "rounded-tr-2xl rounded-br-2xl",
+      color: "text-[#d4af37]",
+      radius: "lg:rounded-tr-2xl lg:rounded-br-2xl",
       items: [
-        "For the gold price, you get access to our Slack server. The slack server is private and is only used for management, meaning you'll be involved in making managerial decisions.",
+        "For the gold price, you get access to our slack channel. The channel is private and is only used for management, meaning you'll be involved in making managerial decisions.",
       ],
     },
   ];
 
-  return (
-    <div className={`h-full min-h-[100vh] p-10`}>
-      <Container className="max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-0 items-center justify-center p-5">
-        {variants.map((v) => {
-          const { color, items, price, radius, slug } = v;
+  const data = [
+    {
+      title: "Become a Patreon",
+      icon: <BrandPatreon size={30} />,
+      link: "#",
+    },
+    {
+      title: "Sponsor on Github",
+      icon: <BrandGithub size={30} />,
+      link: "#",
+    },
+    {
+      title: "Donate via Paypal",
+      icon: <BrandPaypal size={30} />,
+      link: "#",
+    },
+    {
+      title: "Donate some crypto",
+      icon: <BrandCoinbase size={30} />,
+      link: "#",
+    },
+  ];
+  const platforms = data.map((d, i) => {
+    return (
+      <Card
+        shadow={"md"}
+        component={NextLink}
+        href={d.link}
+        key={i}
+        className="h-full flex flex-row space-x-4 items-center hover:scale-105 transition-transform cursor-pointer"
+      >
+        {d.icon}
+        <div className="h-6 opacity-90 border-[1px] rounded-md"></div>
+        <Text className="text-lg">{d.title} </Text>
+      </Card>
+    );
+  });
 
-          return (
-            <CustomCard
-              key={v.price}
-              price={price}
-              color={color}
-              items={items}
-              radius={radius}
-              slug={slug}
-            />
-          );
-        })}
+  return (
+    <div className={`h-full p-5 lg:p-10`}>
+      <Container className="p-0 max-w-7xl ">
+        <section className="center flex-col lg:flex-row mb-8 p-5 space-y-8 lg:space-y-0 lg:space-x-5">
+          <div className="w-full lg:w-1/2 space-y-3">
+            <Text className="text-5xl font-medium roboto mb-5">
+              Help us grow
+            </Text>
+            <Text className="text-xl">
+              Fefa is a non-profit organization. It remains alive because of
+              wonderful human beings like you. By donating, or becoming a
+              patreon, you&apos;ll be helping us improve by creating new
+              resources to help people learn new skills. You can donate through
+              various ways and/or platforms.
+            </Text>
+            <Text className="text-xl">
+              If you become a patreon, or subscribe to a recurring donation, the
+              perks associated with this are equivalent to that of a one-time
+              iron-price level donation. All the donation levels are shown below
+            </Text>
+          </div>
+          <div className="w-full lg:w-1/2 space-y-5 lg:px-10">{platforms}</div>
+        </section>
+        <div className="grid grid-cols-1 md:px-8 lg:px-0 lg:grid-cols-3 gap-5 lg:gap-0 items-center justify-center lg:p-5">
+          {variants.map((v, i) => {
+            const { color, items, price, radius, slug } = v;
+
+            return (
+              <CustomCard
+                key={i}
+                price={price}
+                color={color}
+                items={items}
+                radius={radius}
+                slug={slug}
+              />
+            );
+          })}
+        </div>
       </Container>
     </div>
   );

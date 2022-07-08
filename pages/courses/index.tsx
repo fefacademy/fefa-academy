@@ -54,7 +54,7 @@ const Index = () => {
         {f.icon}
       </Avatar>
       <div>
-        <Text className="text-xl font-medium">{f.title}</Text>
+        <Text className="text-xl font-medium mb-[2px]">{f.title}</Text>
         <Text>{f.body}</Text>
       </div>
     </div>
@@ -66,7 +66,7 @@ const Index = () => {
       <section className={`${classes.showcase}`}>
         <Container className="max-w-7xl p-10 lg:px-16 flex flex-col lg:flex-row lg:pt-16 lg:items-center">
           <div className="w-full lg:w-1/2 space-y-8 ">
-            <Text className="text-5xl leading-[50px] font-bold roboto">
+            <Text className="text-5xl font-medium roboto">
               Level Up Your Skills 🚀{" "}
             </Text>
             <Text

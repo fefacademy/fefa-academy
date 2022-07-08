@@ -18,6 +18,7 @@ import {
 } from "@modulz/radix-icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { BiBookContent, BiLibrary, BiMoney } from "react-icons/bi";
 import { CgPlayList, CgTv } from "react-icons/cg";
 
@@ -33,28 +34,43 @@ const Navbar = () => {
     ["Donate", "/donate"],
     ["Blog", "/blog"],
   ];
+  const router = useRouter();
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
   return (
     <Paper className="z-30 rounded-none sticky top-0 w-full" shadow={"lg"}>
-      <Container className="max-w-[85rem]">
+      <Container className="max-w-[85rem] p-0">
         <div className={`flex items-center justify-between p-5 h-20 lg:px-16`}>
           <div className="flex items-center space-x-8 align-middle h-full ">
-            <div className="center w-2/3  lg:w-1/3 relative">
+            <div className="center relative">
               <NextLink href="/">
-                <Image src={Name} alt="fefa academy" />
+                <Image
+                  src={Name}
+                  alt="fefa academy"
+                  width={230}
+                  height={50}
+                  priority
+                />
               </NextLink>
               <BetaBadge />
             </div>
 
             <div className="large-display center space-x-8 ">
-              {routes.map((r) => (
-                <div className="small-link " key={r[0]}>
-                  <Link href={r[1]}>{r[0]}</Link>
-                </div>
-              ))}
+              {routes.map((r) => {
+                const active = router.pathname;
+                return (
+                  <div
+                    className={`small-link ${
+                      active === r[1] ? "text-blue-400 scale-110" : ""
+                    }`}
+                    key={r[0]}
+                  >
+                    <Link href={r[1]}>{r[0]}</Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="large-display items-center space-x-10 align-middle ">
