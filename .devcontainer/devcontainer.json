@@ -18,13 +18,20 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"dsznajder.es7-react-js-snippets",
+				"esbenp.prettier-vscode",
+				"burkeholland.simple-react-snippets",
+				"bradlc.vscode-tailwindcss",
+				"KnisterPeter.vscode-commitizen"
 			]
 		}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		3000
+	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
