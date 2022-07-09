@@ -30,7 +30,7 @@ const Navbar = () => {
   const routes = [
     ["Courses", "/courses"],
     ["Lessons", "/lessons"],
-    ["Series", "/series"],
+    ["Community", "/community"],
     ["Donate", "/donate"],
     ["Blog", "/blog"],
   ];
@@ -62,7 +62,7 @@ const Navbar = () => {
                 const active = router.pathname;
                 return (
                   <div
-                    className={`small-link ${
+                    className={`small-link text-base ${
                       active === r[1] ? "text-blue-400 scale-110" : ""
                     }`}
                     key={r[0]}

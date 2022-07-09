@@ -51,20 +51,24 @@ const Home: NextPage = () => {
   ];
 
   const support = data.map((d, i) => {
-    const border = i % 2 == 0 ? "border-r-4" : "";
+    const border = i % 2 === 0 && i !== 4 ? "border-r-4" : "";
+    const radius =
+      i % 2 == 0
+        ? "rounded-tl-full rounded-bl-full"
+        : "rounded-tr-full rounded-br-full";
 
     return (
-      <div key={i} className={`h-full ${border} border-cyan-900`}>
+      <div key={i} className={`h-full ${border} border-cyan-700 `}>
         {d[0] && (
           <Card
-            className={`text-2xl ${classes.cardSection} bg-cyan-900 items-start rounded-none`}
+            className={`roboto text-2xl text-white bg-cyan-700 items-start rounded-none ${radius}`}
             p={"sm"}
             shadow="xl"
           >
             {d[0]}
           </Card>
         )}
-        <p className="text-xl p-3">{d[1]}</p>
+        <p className="text-lg p-3">{d[1]}</p>
       </div>
     );
   });
@@ -103,10 +107,6 @@ const Home: NextPage = () => {
               icon={<Notification size={60} />}
             />
           </section>
-        </Container>
-
-        <Container className="my-8 max-w-7xl lg:px-16 grid grid-cols-1 md:grid-cols-2 items-center justify-center">
-          {support}
         </Container>
 
         {/* ways to support */}
@@ -169,6 +169,10 @@ const Home: NextPage = () => {
                 </Text>
               </SupportCard>
             </div>
+
+            <div className="my-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:px-20">
+              {support}
+            </div>
           </Container>
         </section>
 
@@ -189,7 +193,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-full lg:w-1/2 p-5 lg:p-0 pt-0">
               <Text className="text-5xl font-medium roboto mb-5">
-                From the creator
+                From the Founder
               </Text>
               <Text className={`text-xl`}>
                 Hi, 👋. I&apos;m Victor Ndaba, the founder of this small
