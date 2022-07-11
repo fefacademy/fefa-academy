@@ -35,7 +35,7 @@ const Home: NextPage = () => {
 
   const data = [
     [
-      "Are you a content developer?",
+      "Do you create educational content?",
       "Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
     ],
     ["", ""],
