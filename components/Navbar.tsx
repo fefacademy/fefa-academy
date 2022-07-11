@@ -62,7 +62,7 @@ const Navbar = () => {
                 const active = router.pathname;
                 return (
                   <div
-                    className={`small-link text-base ${
+                    className={`small-link text-[15px] ${
                       active === r[1] ? "text-blue-400 scale-110" : ""
                     }`}
                     key={r[0]}
