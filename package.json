@@ -9,7 +9,8 @@
     "lint": "next lint",
     "check:types": "tsc --pretty --noEmit",
     "check:fmt": "prettier --check ./**/*.{js,ts,jsx,tsx}",
-    "format": "prettier --write ./**/*.{js,ts,jsx,tsx}"
+    "format": "prettier --write ./**/*.{js,ts,jsx,tsx}",
+    "clean": "rm -rf .next *.log *.tsbuildinfo"
   },
   "dependencies": {
     "@mantine/core": "^4.2.12",
