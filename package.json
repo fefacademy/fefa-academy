@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "check:types": "tsc --pretty --noEmit",
-    "check:fmt": "prettier --check *.{js,ts,jsx,tsx}",
-    "format": "prettier --write *.{js,ts,jsx,tsx}"
+    "check:fmt": "prettier --check ./**/*.{js,ts,jsx,tsx}",
+    "format": "prettier --write ./**/*.{js,ts,jsx,tsx}"
   },
   "dependencies": {
     "@mantine/core": "^4.2.12",
