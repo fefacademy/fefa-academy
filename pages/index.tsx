@@ -1,4 +1,4 @@
-import { Button, Card, Container, Text } from "@mantine/core";
+import { Button, Container, Text } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -32,46 +32,6 @@ const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
 const Home: NextPage = () => {
   const { classes } = useStyles();
   const iconSize = 60;
-
-  const data = [
-    [
-      "Do you create educational content?",
-      "Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
-    ],
-    ["", ""],
-    ["", ""],
-    [
-      "Are you a blogger?",
-      "Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
-    ],
-    [
-      "Are you an expert in your field?",
-      "Learn how you can become part of Fefa's peer reviewers.Do you create online educational material? Learn how you can become a part of Fefa Academy and have your courses offered through our platform. You should be willing to do it for free and the course content should be of high quality.",
-    ],
-  ];
-
-  const support = data.map((d, i) => {
-    const border = i % 2 === 0 && i !== 4 ? "border-r-4" : "";
-    const radius =
-      i % 2 == 0
-        ? "rounded-tl-full rounded-bl-full"
-        : "rounded-tr-full rounded-br-full";
-
-    return (
-      <div key={i} className={`h-full ${border} border-cyan-700 `}>
-        {d[0] && (
-          <Card
-            className={`roboto text-2xl text-white bg-cyan-700 items-start rounded-none ${radius}`}
-            p={"sm"}
-            shadow="xl"
-          >
-            {d[0]}
-          </Card>
-        )}
-        <p className="text-lg p-3">{d[1]}</p>
-      </div>
-    );
-  });
 
   return (
     <div>
@@ -168,10 +128,6 @@ const Home: NextPage = () => {
                   to download any course via torrenting, please do keep seeding.
                 </Text>
               </SupportCard>
-            </div>
-
-            <div className="my-5 mt-20 grid grid-cols-1 md:grid-cols-2 lg:px-20">
-              {support}
             </div>
           </Container>
         </section>
