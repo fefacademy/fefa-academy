@@ -88,6 +88,7 @@ const DonatePage = () => {
       radius: "lg:rounded-tr-2xl lg:rounded-br-2xl",
       items: [
         "For the gold price, you get access to our slack channel. The channel is private and is only used for management, meaning you'll be involved in making managerial decisions.",
+        "All other previously mentioned perks.",
       ],
     },
   ];
@@ -132,7 +133,7 @@ const DonatePage = () => {
 
   return (
     <div className={`h-full p-5 lg:p-10`}>
-      <Container className="p-0 max-w-7xl ">
+      <Container className=" max-w-7xl ">
         <section className="center flex-col lg:flex-row mb-8 p-5 space-y-8 lg:space-y-0 lg:space-x-5">
           <div className="w-full lg:w-1/2 space-y-3">
             <Text className="text-5xl font-medium roboto mb-5">
