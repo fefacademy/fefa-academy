@@ -1,5 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap"); */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,8 +51,4 @@ a {
 
 .roboto {
   font-family: "Roboto Slab", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.scroll-font {
-  font-family: Satisfy, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
