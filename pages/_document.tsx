@@ -11,18 +11,6 @@ class FefaDocument extends Document {
             href="/fonts/RobotoSlab-Regular.ttf"
             crossOrigin="anonymous"
           ></link>
-          <link
-            rel="preload"
-            as="font"
-            href="/fonts/Satisfy-Regular.ttf"
-            crossOrigin="anonymous"
-          ></link>
-          <link
-            rel="preload"
-            as="font"
-            href="/fonts/GreatVibes-Regular.ttf"
-            crossOrigin="anonymous"
-          ></link>
         </Head>
         <body>
           <Main></Main>
