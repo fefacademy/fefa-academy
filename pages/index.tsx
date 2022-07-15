@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         </Container>
 
         {/* ways to support */}
-        <section className="w-full my-10">
+        <section className="w-full mb-10">
           <Container className="max-w-7xl center flex-col p-0 md:p-3">
             <Text className="text-4xl font-medium roboto text-center mb-5">
               Ways you can support us
