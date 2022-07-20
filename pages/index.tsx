@@ -16,6 +16,7 @@ import Author from "../assets/author.jpg";
 import Faq from "../components/Faq";
 import Showcase from "../components/Showcase";
 import SupportCard from "../components/SupportCard";
+import Demo from "../components/Timeline";
 import TitleCard from "../components/TitleCard";
 import { useStyles } from "../lib/shared";
 
@@ -32,6 +33,29 @@ const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
 const Home: NextPage = () => {
   const { classes } = useStyles();
   const iconSize = 60;
+
+  const faq = [
+    [
+      "How is Fefa Academy different?",
+      "The Fefa experience and approach is different in that rather than stacking your mind with lots of concepts then finding some highly contrived use-case to apply it, we take a problem first approach. Each course has a pre-defined problem set which is used to learn the new concept. You don't learn a new concept unless you need to. Plus, it's all free, so you have nothing to loose. I promise you that it will be legen...wait for it...dary! See you on the inside.",
+    ],
+    [
+      "How do I download a course?",
+      "Course are distributed through various ways. The easiest option is via direct download but this option may not always be available due to server optimizations to minimize bandwidth and save on costs. Another fairly easy way, is copying the course content to your cloud account. This can be achieved directly via the Fefa website and supported cloud platforms/storage include: Google Drive, Mega, Dropbox, GCP, AWS and Azure.",
+    ],
+    [
+      "Can I download a course without an account?",
+      "No. Allowing unauthenticated downloads would be a very bad technical decision on our part since this would enable virtually anybody to download the courses, including bots and we would end up with very large server bills. It is for this reason, that we require you to create an account. Accounts also allow you to save, bookmark, rate and comment on courses, blogs or other content.",
+    ],
+    [
+      "How is the downloaded course structured?",
+      'Once downloaded, a course comes in a very specific folder structure. For obvious reasons, we don\'t provide course streaming as in platforms such as udemy, but we offer you the next best thing. Rather than just providing the bare course lessons, every course comes "wrapped" in a web app structure that provides a rich experience with features like progress tracking integrated into it. Think of it as an offline udemy-like site, that you open from a simple index.html . Check out this video to learn more.',
+    ],
+    [
+      "Isn't all this too good to be true?",
+      "Well, yes. But actually no. In all honesty, you are never going to find a course that is going to give you everything, but we sure as hell do try. However, no matter how many courses you take and despite their quality, the only way you will truly become an expert in anything is by doing it yourself, over and over again, until it finally sticks",
+    ],
+  ];
 
   return (
     <div>
@@ -68,6 +92,8 @@ const Home: NextPage = () => {
             />
           </section>
         </Container>
+
+        <Demo />
 
         {/* ways to support */}
         <section className="w-full mb-10">
@@ -171,7 +197,7 @@ const Home: NextPage = () => {
           <Text className="text-center text-4xl font-medium roboto">
             Frequently asked questions
           </Text>
-          <Faq />
+          <Faq data={faq} />
         </Container>
         {/* Technologies and subjects */}
         {/* Fefa roadmap */}
