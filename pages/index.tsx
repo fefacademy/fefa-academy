@@ -16,7 +16,7 @@ import Author from "../assets/author.jpg";
 import Faq from "../components/Faq";
 import Showcase from "../components/Showcase";
 import SupportCard from "../components/SupportCard";
-import Demo from "../components/Timeline";
+import Timeline from "../components/Timeline";
 import TitleCard from "../components/TitleCard";
 import { useStyles } from "../lib/shared";
 
@@ -93,8 +93,6 @@ const Home: NextPage = () => {
           </section>
         </Container>
 
-        <Demo />
-
         {/* ways to support */}
         <section className="w-full mb-10">
           <Container className="max-w-7xl center flex-col p-0 md:p-3">
@@ -139,8 +137,8 @@ const Home: NextPage = () => {
                   us by taking the surveys and helping us improve. Have an idea,
                   or some constructive criticism ? Don&apos;t hesitate to let us
                   know, in our public{" "}
-                  <InlineLink href="#" text="discord server." /> Find an issue
-                  on the site? <InlineLink href="#" text="Fix it on github" />
+                  <InlineLink href="#" text="discord server." /> See an issue on
+                  the site? <InlineLink href="#" text="Fix it on github" />
                 </Text>
               </SupportCard>
               <SupportCard
@@ -158,8 +156,12 @@ const Home: NextPage = () => {
           </Container>
         </section>
 
+        <section className="mb-16">
+          <Timeline />
+        </section>
+
         {/* From the creator section */}
-        <section className={`w-full my-10 ${classes.showcase}`}>
+        <section className={`w-full mb-10 ${classes.showcase}`}>
           <Container className="max-w-7xl p-0 md:p-5 flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 lg:space-y-0">
             <div className="w-full lg:w-1/2 pt-5 lg:p-10 center flex-col">
               <div className="w-1/2 mb-3">
