@@ -3,7 +3,9 @@ import { Button, Text, useMantineColorScheme } from "@mantine/core";
 const Showcase = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
-  const videoSrc = dark ? "/videos/fefa_dark.mp4" : "/videos/fefa_light.mp4";
+  const videoSrc = dark
+    ? "/static/videos/fefa_dark.mp4"
+    : "/static/videos/fefa_light.mp4";
   return (
     <div className="w-full space-y-6 lg:space-y-0 lg:space-x-6 h-full lg:py-16 flex justify-between flex-col lg:flex-row p-8 md:px-10 lg:px-16 items-center pb-0 lg:pb-5">
       <div className="w-full lg:w-1/2 space-y-5  ">
