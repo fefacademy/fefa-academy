@@ -7,6 +7,7 @@ import {
   Text,
   useMantineColorScheme,
 } from "@mantine/core";
+import Head from "next/head";
 
 import { Heart, JumpRope, Search, Stack3, Star } from "tabler-icons-react";
 import CourseCard from "../../components/CourseCard";
@@ -62,6 +63,13 @@ const Index = () => {
 
   return (
     <div className="w-full">
+      <Head>
+        <title>Fefa Academy | Courses</title>
+        <meta
+          name="description"
+          content="Fefa Academy courses | Learn at your own pace from our masterclass courses"
+        />
+      </Head>
       {/* Course page showcase */}
       <section className={`${classes.showcase}`}>
         <Container className="max-w-7xl p-10 lg:px-16 flex flex-col lg:flex-row lg:pt-16 lg:items-center">
