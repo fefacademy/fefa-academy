@@ -1,5 +1,5 @@
-import React from "react";
 import { Text } from "@mantine/core";
+import React from "react";
 
 interface BadgeProps {
   size?: Size;
@@ -14,7 +14,7 @@ const enum Size {
 
 const BetaBadge: React.FC<BadgeProps> = (props) => {
   return (
-    <div className="rounded-md bg-yellow-400 text-white px-1 uppercase self-start mx-1">
+    <div className="rounded-md bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-1 uppercase self-start mx-1">
       <Text
         className={`${
           props.size === "small" ? "text-xs" : "text-xs"

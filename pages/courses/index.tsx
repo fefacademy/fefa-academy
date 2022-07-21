@@ -65,17 +65,20 @@ const Index = () => {
       {/* Course page showcase */}
       <section className={`${classes.showcase}`}>
         <Container className="max-w-7xl p-10 lg:px-16 flex flex-col lg:flex-row lg:pt-16 lg:items-center">
-          <div className="w-full lg:w-1/2 space-y-8 ">
+          <div className="w-full lg:w-1/2 space-y-6 ">
             <Text className="text-5xl font-medium roboto">
               Level Up Your Skills 🚀{" "}
             </Text>
-            <Text
-              className={`text-2xl ${dark ? "text-gray-400" : "text-gray-600"}`}
-            >
+            <Text className={`text-xl`}>
               A collection of tutorials geared towards familiriazing you with
               the topics of your choosing. All Our courses are masterclasses:
               designed to take you from a novice level or intermediate to
               expert.
+            </Text>
+            <Text className={`text-xl`}>
+              Didn&apos;t find what you&apos;re looking for? Head over to the
+              community section and tell us what new course you&apos;d like. We
+              take regular polls to help us decide what new courses to create.
             </Text>
             <Group>
               <Button
