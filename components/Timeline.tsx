@@ -5,10 +5,10 @@ import styles from "../styles/Timeline.module.css";
 function Timeline() {
   const bulletSize = 30;
 
-  const dat = [
+  const data = [
     {
       title: "Are you a blogger?",
-      body: "Fefa isn't just an academy, it's a community looking to help people grow and learn new skills. That said, if you write blogs on any subjects related to the academy, you can request blogger level access and if granted, you will be able to create and post your content directly via the website.",
+      body: "Fefa isn't just an academy, it's a community. If you create blogs on any subjects related to the academy, you can request blogger level access and if granted, you will be able to create and post your content directly via the website.",
       button: "Get Started",
       link: "/join?ref=blogger",
     },
@@ -20,32 +20,17 @@ function Timeline() {
     },
     {
       title: "Are you an expert in your field?",
-      body: "Fefa offers certifications on course completion. However, the students must first pass the quizes provided to them. The quizes are not conventional multiple choice questions, they are problem statements to which you provide code snippets which are then reviewed by experts in given topic. Learn how you can become one of said experts.",
+      body: "We offer certifications on course completion. However, the students must first pass quizes in form of problem statements to which you provide solutions which are then reviewed by experts in given topic. Learn how you can become one.",
       button: "Learn more",
       link: "/join?ref=expert",
     },
-  ];
-
-  const data = [
-    [
-      "Are you a blogger?",
-      "Fefa isn't just an academy, it's a community looking to help people grow and learn new skills. That said, if you write blogs on any subjects related to the academy, you can request blogger level access and if granted, you will be able to create and post your content directly via the website.",
-    ],
-    [
-      "Do you create educational content?",
-      "We are constantly looking to expand our staff. If you create high quality educational content at any capacity, and are willing to do it for free, then you are eligible to join the fefa staff and help us in our mission to help others learn for free.",
-    ],
-    [
-      "Are you an expert in your field?",
-      "Fefa offers certifications on course completion. However, the students must first pass the quizes provided to them. The quizes are not conventional multiple choice questions, they are problem statements to which you provide code snippets which are then reviewed by experts in given topic. Learn how you can become one of said experts.",
-    ],
   ];
 
   return (
     <Container
       className={`max-w-7xl px-5 md:p-0 flex flex-col justify-center space-y-8 my-10 ${styles.container}`}
     >
-      {dat.map((d, i) => {
+      {data.map((d, i) => {
         return (
           <div key={i} className={`${styles.item} w-full md:w-[50%]`}>
             <div
