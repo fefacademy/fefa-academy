@@ -10,7 +10,7 @@
   }
 
   .small-link {
-    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500;
+    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500 hover:scale-105;
   }
 
   .center {
