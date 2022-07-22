@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,4 +53,8 @@ a {
 
 .roboto {
   font-family: "Roboto Slab", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cursive {
+  font-family: "Courgette", cursive;
 }
