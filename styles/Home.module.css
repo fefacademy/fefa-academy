@@ -1,10 +1,6 @@
 .scroll {
-  background-image: url("/static/images/scroll_paper.png");
+  background-image: url("/static/images/parchment.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-.scrollFont {
-  font-family: "Great Vibes", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
