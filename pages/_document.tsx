@@ -11,6 +11,12 @@ class FefaDocument extends Document {
             href="/fonts/RobotoSlab-Regular.ttf"
             crossOrigin="anonymous"
           ></link>
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Courgette-Regular.ttf"
+            crossOrigin="anonymous"
+          ></link>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
