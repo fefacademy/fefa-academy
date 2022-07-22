@@ -1,4 +1,4 @@
-import { Button, Container, Text } from "@mantine/core";
+import { Blockquote, Button, Container, Text } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -13,12 +13,15 @@ import {
   Notification,
 } from "tabler-icons-react";
 import Author from "../assets/author.jpg";
+import SealImage from "../assets/fefa_seal.png";
 import Faq from "../components/Faq";
 import Showcase from "../components/Showcase";
 import SupportCard from "../components/SupportCard";
 import Timeline from "../components/Timeline";
 import TitleCard from "../components/TitleCard";
+import { HomepageFAQData, ManifestoData } from "../lib/data";
 import { useStyles } from "../lib/shared";
+import styles from "../styles/Home.module.css";
 
 const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
   return (
@@ -34,35 +37,11 @@ const Home: NextPage = () => {
   const { classes } = useStyles();
   const iconSize = 60;
 
-  const faq = [
-    [
-      "How is Fefa Academy different?",
-      "The Fefa experience and approach is different in that rather than stacking your mind with lots of concepts then finding some highly contrived use-case to apply it, we take a problem first approach. Each course has a pre-defined problem set which is used to learn the new concept. You don't learn a new concept unless you need to. Plus, it's all free, so you have nothing to loose. I promise you that it will be legen...wait for it...dary! See you on the inside.",
-    ],
-    [
-      "How do I download a course?",
-      "Course are distributed through various ways. The easiest option is via direct download but this option may not always be available due to server optimizations to minimize bandwidth and save on costs. Another fairly easy way, is copying the course content to your cloud account. This can be achieved directly via the Fefa website and supported cloud platforms/storage include: Google Drive, Mega, Dropbox, GCP, AWS and Azure.",
-    ],
-    [
-      "Can I download a course without an account?",
-      "No. Allowing unauthenticated downloads would be a very bad technical decision on our part since this would enable virtually anybody to download the courses, including bots and we would end up with very large server bills. It is for this reason, that we require you to create an account. Accounts also allow you to save, bookmark, rate and comment on courses, blogs or other content.",
-    ],
-    [
-      "How is the downloaded course structured?",
-      'Once downloaded, a course comes in a very specific folder structure. For obvious reasons, we don\'t provide course streaming as in platforms such as udemy, but we offer you the next best thing. Rather than just providing the bare course lessons, every course comes "wrapped" in a web app structure that provides a rich experience with features like progress tracking integrated into it. Think of it as an offline udemy-like site, that you open from a simple index.html . Check out this video to learn more.',
-    ],
-    [
-      "Isn't all this too good to be true?",
-      "Well, yes. But actually no. In all honesty, you are never going to find a course that is going to give you everything, but we sure as hell do try. However, no matter how many courses you take and despite their quality, the only way you will truly become an expert in anything is by doing it yourself, over and over again, until it finally sticks",
-    ],
-  ];
-
   return (
     <div>
       <Head>
-        <title>Fefa Academy</title>
+        <title>Fefa Academy | Free education for all</title>
         <meta name="description" content="Free education for All" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
@@ -93,6 +72,47 @@ const Home: NextPage = () => {
           </section>
         </Container>
 
+        {/* Manifesto */}
+        <section className="p-3 px-5">
+          <Container
+            className={`max-w-[78rem] relative h-full ${styles.scroll} rounded-2xl p-5 md:p-7 text-black cursive`}
+          >
+            <Text className="text-2xl md:text-4xl font-semibold text-center">
+              The Fefa Academy Manifesto
+            </Text>
+            <div className="grid gap-5 md:gap-8 grid-cols-1 md:grid-cols-2 p-3 md:p-8 md:px-14">
+              {ManifestoData.map((d, i) => {
+                return (
+                  <div key={i} className="space-y-2">
+                    <Text className="text-xl md:text-2xl font-semibold">
+                      {d.title}
+                    </Text>
+                    <Blockquote
+                      color={"dark"}
+                      className="text-black p-1"
+                      p={"xs"}
+                      cite={d.cite}
+                      styles={{
+                        cite: {
+                          color: "black",
+                          fontWeight: "bold",
+                          fontSize: 16,
+                        },
+                      }}
+                    >
+                      {d.quote}
+                    </Blockquote>
+                    <Text className="text-lg md:text-xl">{d.body}</Text>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="relative flex justify-end md:absolute right-5 bottom-2">
+              <Image alt="wax-seal" src={SealImage} />
+            </div>
+          </Container>
+        </section>
+
         {/* ways to support */}
         <section className="w-full mb-10">
           <Container className="max-w-7xl center flex-col p-0 md:p-3">
@@ -101,7 +121,7 @@ const Home: NextPage = () => {
             </Text>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-5">
               <SupportCard
-                title="Financial support"
+                title="Donate"
                 icon={<Coin size={iconSize} className="text-green-400" />}
               >
                 <Text>
@@ -156,6 +176,7 @@ const Home: NextPage = () => {
           </Container>
         </section>
 
+        {/* Timeline section */}
         <section className="mb-16">
           <Timeline />
         </section>
@@ -199,7 +220,7 @@ const Home: NextPage = () => {
           <Text className="text-center text-4xl font-medium roboto">
             Frequently asked questions
           </Text>
-          <Faq data={faq} />
+          <Faq data={HomepageFAQData} />
         </Container>
         {/* Technologies and subjects */}
         {/* Fefa roadmap */}
@@ -208,8 +229,6 @@ const Home: NextPage = () => {
         {/* signup/in */}
         {/* manifesto */}
         {/* newsletter */}
-
-        {/* call for bloggers and content authors */}
       </main>
     </div>
   );
