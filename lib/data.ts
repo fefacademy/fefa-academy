@@ -30,7 +30,7 @@ export const ManifestoData = [
     body: "One of the goals we wish to achieve is create highly composable projects that will not only have real-world applications, but also get reused by other connected projects down the line.",
   },
   {
-    title: "II. To build a community, a family",
+    title: "II. To build a community...a family",
     quote:
       "I love being with people. It's the most incredible thing in the world; That world may change and evolve, but the one thing that will never change, we're all part of one big family...",
     cite: "- Stan Lee",
