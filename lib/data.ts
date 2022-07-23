@@ -27,7 +27,7 @@ export const ManifestoData = [
     quote:
       '... In an important sense, there are no "subjects" at all; there is only all knowledge, since the cross connections among the myriad topics of this world simply cannot be divided up neatly.',
     cite: "- Ted Nelson",
-    body: "One of the goals we wish to achieve is create highly composable projects that will not only have real-world applications, but also get reused by other connected projects down the line.",
+    body: "One of the goals we wish to achieve is create highly composable projects that will not only have real-world applications, but also get reused by other related projects down the line.",
   },
   {
     title: "II. To build a community...a family",
