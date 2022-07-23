@@ -75,16 +75,16 @@ const Home: NextPage = () => {
         {/* Manifesto */}
         <section className="p-3 px-5">
           <Container
-            className={`max-w-[78rem] relative h-full ${styles.scroll} rounded-2xl p-5 md:p-7 text-black cursive`}
+            className={`max-w-[78rem] relative h-full ${styles.scroll} rounded-sm p-5 md:p-7 text-black cursive`}
           >
-            <Text className="text-2xl md:text-4xl font-semibold text-center">
+            <Text className="text-2xl md:text-4xl font-semibold text-center mb-3">
               The Fefa Academy Manifesto
             </Text>
             <div className="grid gap-5 md:gap-8 grid-cols-1 md:grid-cols-2 p-3 md:p-8 md:px-14">
               {ManifestoData.map((d, i) => {
                 return (
                   <div key={i} className="space-y-2">
-                    <Text className="text-xl md:text-2xl font-semibold">
+                    <Text className="text-xl text-center md:text-2xl font-semibold">
                       {d.title}
                     </Text>
                     <Blockquote
@@ -177,7 +177,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Timeline section */}
-        <section className="mb-16">
+        <section className={`mb-16 py-5 ${styles.dotted}`}>
           <Timeline />
         </section>
 
@@ -210,7 +210,8 @@ const Home: NextPage = () => {
                 noticed that there&apos;s always this pattern where most free
                 courses only offer you so much and the really good ones are not
                 free, and even then, they may not be enough. Which is why Fefa
-                is here, to break the wheel 😉.
+                is here,{" "}
+                <span className="font-medium">to break the wheel 😉.</span>
               </Text>
             </div>
           </Container>
@@ -224,10 +225,14 @@ const Home: NextPage = () => {
         </Container>
         {/* Technologies and subjects */}
         {/* Fefa roadmap */}
+        {/* Become part of the fefa :: community platforms section */}
+        {/* benefits of joining */}
+        {/* what we offer */}
+        {/* learn at your own pace */}
+        {/* project based learning on steroids */}
 
         {/* fefa hero image */}
         {/* signup/in */}
-        {/* manifesto */}
         {/* newsletter */}
       </main>
     </div>
