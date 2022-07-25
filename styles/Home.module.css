@@ -1,10 +1,20 @@
 .scroll {
-  background-image: url("/static/images/scroll_paper.png");
+  background-image: url("/static/images/parchment.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.scrollFont {
-  font-family: "Great Vibes", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.dotted {
+  /* background-image: radial-gradient(
+    hsla(220 13% 69%/0.2) 0.5px,
+    hsla(220 17% 17%/1) 0.5px
+  );
+  background-size: 10px 10px;
+  background-position: 0 0;
+  background-color: transparent; */
+  background-image: radial-gradient(#5a5656 20%, transparent 20%);
+  /* background-color: #e53935; */
+  background-position: 0 0;
+  background-size: 8px 8px;
 }

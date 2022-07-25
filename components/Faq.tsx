@@ -71,7 +71,7 @@ const Faq = ({ data }: { data: Array<String[]> }) => {
         styles={{
           label: {
             fontSize: 20,
-            fontFamily: "Roboto Slab",
+            // fontFamily: "Roboto Slab",
           },
         }}
       >

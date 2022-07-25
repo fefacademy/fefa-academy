@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +10,7 @@
   }
 
   .small-link {
-    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500;
+    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500 hover:scale-105;
   }
 
   .center {
@@ -51,4 +53,8 @@ a {
 
 .roboto {
   font-family: "Roboto Slab", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cursive {
+  font-family: "Courgette", cursive;
 }

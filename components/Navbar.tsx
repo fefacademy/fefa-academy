@@ -16,13 +16,11 @@ import {
   RocketIcon,
   SunIcon,
 } from "@modulz/radix-icons";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BiBookContent, BiLibrary, BiMoney } from "react-icons/bi";
 import { CgPlayList, CgTv } from "react-icons/cg";
 
-import Name from "../assets/fefa_name.svg";
 import BetaBadge from "./BetaBadge";
 import ThemeButton from "./ThemeButton";
 
@@ -46,12 +44,12 @@ const Navbar = () => {
           <div className="flex items-center space-x-8 align-middle h-full ">
             <div className="center relative">
               <NextLink href="/">
-                <Image
-                  src={Name}
+                {/* eslint-disable-next-line */}
+                <img
+                  src="/static/images/fefa_name.svg"
                   alt="fefa academy"
                   width={230}
                   height={50}
-                  priority
                 />
               </NextLink>
               <BetaBadge />
@@ -63,7 +61,7 @@ const Navbar = () => {
                 return (
                   <div
                     className={`small-link text-[15px] ${
-                      active === r[1] ? "text-blue-400 scale-110" : ""
+                      active === r[1] ? "text-blue-400" : ""
                     }`}
                     key={r[0]}
                   >

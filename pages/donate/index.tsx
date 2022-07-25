@@ -1,22 +1,19 @@
 import { Card, CardSection, Container, Text } from "@mantine/core";
 import { NextLink } from "@mantine/next";
-import { CheckCircledIcon } from "@modulz/radix-icons";
 import React from "react";
 import {
   BrandCoinbase,
   BrandGithub,
   BrandPatreon,
   BrandPaypal,
+  CircleCheck,
 } from "tabler-icons-react";
 import { useStyles } from "../../lib/shared";
 
 const Item: React.FC<{ children: React.ReactNode }> = (p) => {
   return (
     <div className="leading-9  items-start relative px-5 my-5">
-      <CheckCircledIcon
-        style={{ width: 30, height: 30 }}
-        className="text-green-400 absolute top-0 left-0"
-      />
+      <CircleCheck size={30} className="text-green-400 absolute top-0 left-0" />
       <Text className="text-lg mx-4">{p.children}</Text>
     </div>
   );
@@ -132,9 +129,9 @@ const DonatePage = () => {
   });
 
   return (
-    <div className={`h-full p-5 lg:p-10`}>
+    <div className={`h-full p-5 lg:p-10 pb-0`}>
       <Container className=" max-w-7xl ">
-        <section className="center flex-col lg:flex-row mb-8 p-5 space-y-8 lg:space-y-0 lg:space-x-5">
+        <section className="center flex-col lg:flex-row mb-8 p-3 space-y-8 lg:space-y-0 lg:space-x-5">
           <div className="w-full lg:w-1/2 space-y-3">
             <Text className="text-5xl font-medium roboto mb-5">
               Help us grow
@@ -154,7 +151,7 @@ const DonatePage = () => {
           </div>
           <div className="w-full lg:w-1/2 space-y-5 lg:px-10">{platforms}</div>
         </section>
-        <div className="grid grid-cols-1 md:px-8 lg:px-0 lg:grid-cols-3 gap-5 lg:gap-0 items-center justify-center lg:p-5">
+        <div className="grid grid-cols-1 md:px-8  lg:grid-cols-3 gap-5 lg:gap-0 items-center justify-center lg:p-5">
           {variants.map((v, i) => {
             const { color, items, price, radius, slug } = v;
 

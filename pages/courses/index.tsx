@@ -67,19 +67,19 @@ const Index = () => {
         <title>Fefa Academy | Courses</title>
         <meta
           name="description"
-          content="Fefa Academy courses | Learn at your own pace from our masterclass courses"
+          content="Fefa Academy courses | Level up your skills. Learn at your own pace from our masterclass courses"
         />
       </Head>
       {/* Course page showcase */}
       <section className={`${classes.showcase}`}>
         <Container className="max-w-7xl p-10 lg:px-16 flex flex-col lg:flex-row lg:pt-16 lg:items-center">
-          <div className="w-full lg:w-1/2 space-y-6 ">
+          <div className="w-full lg:w-1/2 space-y-7 ">
             <Text className="text-5xl font-medium roboto">
               Level Up Your Skills 🚀{" "}
             </Text>
             <Text className={`text-xl`}>
               A collection of tutorials geared towards familiriazing you with
-              the topics of your choosing. All Our courses are masterclasses:
+              the topics of your choosing. Our courses are masterclasses:
               designed to take you from a novice level or intermediate to
               expert.
             </Text>
