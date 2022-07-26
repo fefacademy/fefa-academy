@@ -1,7 +1,9 @@
-import React from "react";
-
-const index = () => {
-  return <div>index</div>;
+const CommunityPage = () => {
+  return (
+    <div>
+      <h1>The Fefa Academy Community</h1>
+    </div>
+  );
 };
 
-export default index;
+export default CommunityPage;
