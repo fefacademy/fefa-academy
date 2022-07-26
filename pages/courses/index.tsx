@@ -55,7 +55,7 @@ const Index = () => {
         {f.icon}
       </Avatar>
       <div>
-        <Text className="text-xl font-medium mb-[2px]">{f.title}</Text>
+        <Text className="text-xl font-medium">{f.title}</Text>
         <Text>{f.body}</Text>
       </div>
     </div>
