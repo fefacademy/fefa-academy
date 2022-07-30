@@ -177,7 +177,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Timeline section */}
-        <section className={`mb-16 py-5 ${styles.dotted}`}>
+        <section className={`py-5 pb-16 ${styles.dotted}`}>
           <Timeline />
         </section>
 
