@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../public/fonts/RobotoSlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Courgette";
+  src: url("../public/fonts/Courgette-Regular.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
