@@ -75,7 +75,7 @@ const Home: NextPage = () => {
         {/* Manifesto */}
         <section className="p-3 px-5">
           <Container
-            className={`max-w-[78rem] relative h-full ${styles.scroll} rounded-sm p-5 md:p-7 text-black cursive`}
+            className={`max-w-[78rem] relative h-full ${styles.scroll} rounded-md p-5 md:p-7 text-black cursive`}
           >
             <Text className="text-2xl md:text-4xl font-semibold text-center mb-3">
               The Fefa Academy Manifesto
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* ways to support */}
-        <section className="w-full mb-10">
+        <section className="w-full mb-5">
           <Container className="max-w-7xl center flex-col p-0 md:p-3">
             <Text className="text-4xl font-medium roboto text-center mb-5">
               Ways you can support us
@@ -177,7 +177,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Timeline section */}
-        <section className={`mb-16 py-5 ${styles.dotted}`}>
+        <section className={`py-5 ${styles.dotted}`}>
           <Timeline />
         </section>
 
