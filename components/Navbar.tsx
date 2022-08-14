@@ -1,5 +1,6 @@
 import {
   Button,
+  Center,
   Container,
   Divider,
   Menu,
@@ -20,6 +21,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { BiBookContent, BiLibrary, BiMoney } from "react-icons/bi";
 import { CgPlayList, CgTv } from "react-icons/cg";
+import { ChevronDown } from "tabler-icons-react";
+import { NavbarLinks } from "../lib/data";
 
 import BetaBadge from "./BetaBadge";
 import ThemeButton from "./ThemeButton";
@@ -32,8 +35,8 @@ const Navbar = () => {
     ["Donate", "/donate"],
     ["Blog", "/blog"],
   ];
-  const router = useRouter();
 
+  const router = useRouter();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
@@ -56,16 +59,47 @@ const Navbar = () => {
             </div>
 
             <div className="large-display center space-x-8 ">
-              {routes.map((r) => {
+              {NavbarLinks.map((r) => {
                 const active = router.pathname;
+                const menuItems = r.links?.map((item) => (
+                  <Menu.Item key={item.link}>
+                    <NextLink
+                      className="hover:text-blue-400 uppercase font-medium"
+                      href={item.link}
+                    >
+                      {item.label}
+                    </NextLink>
+                  </Menu.Item>
+                ));
+
+                if (menuItems) {
+                  return (
+                    <Menu
+                      key={r.label}
+                      trigger="hover"
+                      exitTransitionDuration={0}
+                      control={
+                        <Center>
+                          <span className="small-link text-[15px] uppercase">
+                            {r.label}
+                          </span>
+                          <ChevronDown size={20} className="ml-1 text-white" />
+                        </Center>
+                      }
+                    >
+                      {menuItems}
+                    </Menu>
+                  );
+                }
+
                 return (
                   <div
                     className={`small-link text-[15px] ${
-                      active === r[1] ? "text-blue-400" : ""
+                      active === r.link ? "text-blue-400" : ""
                     }`}
-                    key={r[0]}
+                    key={r.link}
                   >
-                    <Link href={r[1]}>{r[0]}</Link>
+                    <Link href={r.link!}>{r.label}</Link>
                   </div>
                 );
               })}
