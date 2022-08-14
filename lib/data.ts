@@ -1,3 +1,31 @@
+export const NavbarLinks = [
+  {
+    label: "Academy",
+    links: [
+      {
+        label: "Courses",
+        link: "/courses",
+      },
+      {
+        label: "Lessons",
+        link: "/lessons",
+      },
+    ],
+  },
+  {
+    label: "Blog",
+    link: "/blog",
+  },
+  {
+    label: "Community",
+    link: "/community",
+  },
+  {
+    label: "Donate",
+    link: "/donate",
+  },
+];
+
 export const HomepageFAQData = [
   [
     "How is Fefa Academy different?",
