@@ -66,7 +66,7 @@ export const ManifestoData = [
     quote:
       "I love being with people. It's the most incredible thing in the world; That world may change and evolve, but the one thing that will never change, we're all part of one big family...",
     cite: "- Stan Lee",
-    body: "There's is nothing quite like a good community. My goals with Fefa include creating a thriving community providing a platform for people to grow, make friends, learn new skills.",
+    body: "Vin Diesel was right: It's all about family. My goals with Fefa include creating a thriving community where people learn new skills, grow professionaly, make new friends, become part of a family! ",
   },
   {
     title: "III. Because free can be high quality too",
