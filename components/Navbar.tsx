@@ -64,7 +64,9 @@ const Navbar = () => {
                 const menuItems = r.links?.map((item) => (
                   <Menu.Item key={item.link}>
                     <NextLink
-                      className="hover:text-blue-400 uppercase font-medium"
+                      className={`small-link text-[15px] text-sm  ${
+                        active === r.link ? "text-blue-400" : ""
+                      }`}
                       href={item.link}
                     >
                       {item.label}
@@ -75,12 +77,12 @@ const Navbar = () => {
                 if (menuItems) {
                   return (
                     <Menu
+                      size={"sm"}
                       key={r.label}
                       trigger="hover"
-                      exitTransitionDuration={0}
                       control={
                         <Center>
-                          <span className="small-link text-[15px] uppercase">
+                          <span className="text-base uppercase font-medium cursor-pointer">
                             {r.label}
                           </span>
                           <ChevronDown size={20} className="ml-1 text-white" />
