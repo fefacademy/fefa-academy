@@ -1,4 +1,11 @@
-import { Blockquote, Button, Container, Text } from "@mantine/core";
+import {
+  Blockquote,
+  Button,
+  Container,
+  Group,
+  Text,
+  TextInput,
+} from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -218,6 +225,49 @@ const Home: NextPage = () => {
         </section>
 
         <Container className="max-w-7xl p-0 my-10">
+          <section className="p-3 grid gap-8 grid-cols-1 md:grid-cols-2 mb-8">
+            <div className={`${classes.customCard} p-8 rounded-md`}>
+              <Text
+                className="text-3xl roboto mb-5 bg-gradient-to-r from-blue-500 to-teal-500 via-green-400"
+                variant="gradient"
+              >
+                Wait, Before you go...
+              </Text>
+              <Text className="text-2xl mb-2">Subscribe to our newsletter</Text>
+              <Text color={"dimmed"}>
+                You will never miss important updates, latest news and community
+                QA and sessions. Our newsletter is once a week, every Sunday
+              </Text>
+              <Group spacing={"md"} className="py-2" align="end">
+                <TextInput
+                  className="w-2/3"
+                  placeholder="lorenzo.vonmatterhorn@himym.com"
+                  size="lg"
+                />
+                <Button size="lg" className="!bg-blue-500">
+                  Subscribe
+                </Button>
+              </Group>
+            </div>
+            <div className={`${classes.customCard} p-8 rounded-md`}>
+              <Text
+                variant="gradient"
+                className="text-3xl roboto mb-5 bg-gradient-to-l from-orange-400 to-teal-500 via-yellow-400"
+              >
+                You could also...
+              </Text>
+              <Text className="text-2xl mb-2">Sign the guestbook</Text>
+              <Text color={"dimmed"} className="mb-2">
+                Leave a message for future visitors. It can be anything from: a
+                review, an inside-joke, an awesome one-liner.{" "}
+                <span className="font-bold">Go ahead, make my day!</span>
+              </Text>
+              <Button size="lg" variant="outline" className="rounded-full">
+                Guestbook
+              </Button>
+            </div>
+          </section>
+
           <Text className="text-center text-4xl font-medium roboto">
             Frequently asked questions
           </Text>
