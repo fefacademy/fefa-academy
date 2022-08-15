@@ -3,6 +3,10 @@ export const NavbarLinks = [
     label: "Academy",
     links: [
       {
+        label: "Blog",
+        link: "/blog",
+      },
+      {
         label: "Courses",
         link: "/courses",
       },
@@ -13,16 +17,16 @@ export const NavbarLinks = [
     ],
   },
   {
-    label: "Blog",
-    link: "/blog",
-  },
-  {
     label: "Community",
     link: "/community",
   },
   {
     label: "Donate",
     link: "/donate",
+  },
+  {
+    label: "Guestbook",
+    link: "/guestbook",
   },
 ];
 
