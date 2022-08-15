@@ -64,7 +64,7 @@ const Navbar = () => {
                 const menuItems = r.links?.map((item) => (
                   <Menu.Item key={item.link}>
                     <NextLink
-                      className={`small-link text-[15px] text-sm  ${
+                      className={`block w-full small-link text-[15px] text-sm  ${
                         active === r.link ? "text-blue-400" : ""
                       }`}
                       href={item.link}
