@@ -79,6 +79,11 @@ const Home: NextPage = () => {
           </section>
         </Container>
 
+        {/* TODO: Technologies and subjects */}
+        {/* TODO: Learn at your own pace */}
+        {/* TODO: Features and what we offer */}
+        {/* TODO: Become a part of the fefa community */}
+
         {/* Manifesto */}
         <section className="p-3 px-5">
           <Container
@@ -225,6 +230,7 @@ const Home: NextPage = () => {
         </section>
 
         <Container className="max-w-7xl p-0 my-10">
+          {/* newsletter section */}
           <section className="p-3 grid gap-8 grid-cols-1 md:grid-cols-2 mb-8">
             <div className={`${classes.customCard} p-8 rounded-md`}>
               <Text
@@ -258,8 +264,8 @@ const Home: NextPage = () => {
               </Text>
               <Text className="text-2xl mb-2">Sign the guestbook</Text>
               <Text color={"dimmed"} className="mb-2">
-                Leave a message for future visitors. It can be anything from: a
-                review, an inside-joke, an awesome one-liner.{" "}
+                Leave a message for future visitors. It can be anything from a
+                review to an inside-joke to an awesome one-liner.{" "}
                 <span className="font-bold">Go ahead, make my day!</span>
               </Text>
               <Button size="lg" variant="outline" className="rounded-full">
@@ -268,6 +274,7 @@ const Home: NextPage = () => {
             </div>
           </section>
 
+          {/* Faq section */}
           <Text className="text-center text-4xl font-medium roboto">
             Frequently asked questions
           </Text>
@@ -283,7 +290,6 @@ const Home: NextPage = () => {
 
         {/* fefa hero image */}
         {/* signup/in */}
-        {/* newsletter */}
       </main>
     </div>
   );
