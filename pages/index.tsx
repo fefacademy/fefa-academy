@@ -1,10 +1,12 @@
 import {
   Blockquote,
   Button,
+  Center,
   Container,
   Group,
   Text,
   TextInput,
+  useMantineColorScheme,
 } from "@mantine/core";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -12,23 +14,34 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Book,
+  Calendar,
+  CashOff,
+  Certificate,
+  CloudDownload,
   Coin,
   DeviceTv,
   Flame,
+  Friends,
   Heartbeat,
   HeartHandshake,
+  MoodCrazyHappy,
   Notification,
+  StairsUp,
+  Stars,
+  Urgent,
 } from "tabler-icons-react";
 import Author from "../assets/author.jpg";
 import SealImage from "../assets/fefa_seal.png";
 import Faq from "../components/Faq";
-import Showcase from "../components/Showcase";
+import HeroContainer from "../components/HeroContainer";
 import SupportCard from "../components/SupportCard";
 import Timeline from "../components/Timeline";
 import TitleCard from "../components/TitleCard";
 import { HomepageFAQData, ManifestoData } from "../lib/data";
 import { useStyles } from "../lib/shared";
 import styles from "../styles/Home.module.css";
+
+import HeartLogo from "../assets/heart.png";
 
 const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
   return (
@@ -43,6 +56,8 @@ const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
 const Home: NextPage = () => {
   const { classes } = useStyles();
   const iconSize = 60;
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
 
   return (
     <div>
@@ -54,7 +69,7 @@ const Home: NextPage = () => {
       <main>
         <Container className="max-w-7xl p-0">
           {/* showcase */}
-          <Showcase />
+          <HeroContainer />
 
           {/* title cards */}
           <section className="p-8 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16">
@@ -83,6 +98,130 @@ const Home: NextPage = () => {
         {/* TODO: Learn at your own pace */}
         {/* TODO: Features and what we offer */}
         {/* TODO: Become a part of the fefa community */}
+
+        <Container className="max-w-7xl p-0">
+          <Center>
+            <Text className="flex items-center text-4xl roboto mb-3">
+              Why you&apos;ll{" "}
+              <span className="mx-3 hidden md:inline">
+                <Image src={HeartLogo} alt="love"></Image>
+              </span>{" "}
+              Fefa Academy
+            </Text>
+          </Center>
+          <section className="grid gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 mb-5">
+            <div className="space-y-3">
+              <Calendar size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Flexible learning schedule
+              </Text>
+              <Text className="text-lg">
+                Only you control when and how you learn. Since the courses are
+                saved for offline use, you can go throught them whenever you
+                prefer, in whatever order you prefer.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <Friends size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Active community support
+              </Text>
+              <Text className="text-lg">
+                Fefa contains a rich and active community on many platforms.
+                Perhaps too many. Whether you&apos; stuck or looking for advice,
+                we&apos;ve got you covered!
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <Certificate size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Certificate on completion
+              </Text>
+              <Text className="text-lg">
+                Upon course completion, you can request a certificate and
+                depending on the course, you will be required to complete
+                certain tasks/quizes after which you&apos;re presented with the
+                course certificate.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <CloudDownload size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Downloadable courses
+              </Text>
+              <Text className="text-lg">
+                Download any course, any time to watch them later without an
+                internet connection. Alternatively, you could save a course to
+                your cloud storage service of choice.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <Stars size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Project-based learning
+              </Text>
+              <Text className="text-lg">
+                Think project-based learning on steroids. We create multiple
+                real world projects with practical applications to solidify the
+                concepts taught to you in a course/lesson.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <MoodCrazyHappy size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">Nerdy humour</Text>
+              <Text className="text-lg">
+                I can&apos;t help myself. I am a nerd and I make nerdy jokes.
+                Even this website is rigged with multiple easter eggs: nerdy
+                references and popular one-liners. Brace yourself.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <StairsUp size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Learn from the ground-up
+              </Text>
+              <Text className="text-lg">
+                Our courses are masterclasses. They assume a novice status and
+                are designed in such a way to take you from whatever level you
+                are in, to an expert in your field.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <Urgent size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                Problem-centered approach
+              </Text>
+              <Text className="text-lg">
+                We don&apos; stack your mind with concepts then find highly
+                contrived use-cases. We take a problem first approach and
+                present new concepts in due time. We cross that bridge when we
+                get there.
+              </Text>
+            </div>
+            <div className="space-y-3">
+              <CashOff size={50} color={"teal"} />
+              <Text className="text-2xl font-semibold">
+                It&apos;s totally free
+              </Text>
+              <Text className="text-lg">
+                And if that&apos;s not enough, remember that it&apos;s all
+                absolutely free. It quite literally doesn&apos;t get more
+                exciting than that. If not, there&apos;s the door. Well, not
+                really, but you get the point.
+              </Text>
+            </div>
+            {/* learn offline */}
+            {/* flexible schedule */}
+            {/* support from active community */}
+            {/* learn by doing */}
+            {/* projject based learning */}
+            {/* real world projects */}
+            {/* get certificate on done */}
+            {/* nerdy jokes, comedy */}
+            {/* full circle learning */}
+            {/* problem first approach */}
+          </section>
+        </Container>
 
         {/* Manifesto */}
         <section className="p-3 px-5">
@@ -230,12 +369,55 @@ const Home: NextPage = () => {
         </section>
 
         <Container className="max-w-7xl p-0 my-10">
+          {/* Join community section */}
+          <section className="flex flex-col-reverse p-3 lg:flex-row justify-center items-center mb-5">
+            <div className="w-full p-3 lg:w-1/2">
+              <Text className="text-4xl roboto mb-5">
+                Join the community...
+              </Text>
+              <Text className="text-xl">
+                As stated above, Fefa is more than just another online academy.
+                We are a community, a family more like, that will help you learn
+                together and grow together. The Fefa Academy community is spread
+                out over various social platforms and even on the Academy
+                website itself. For code-related projects and programming in
+                general, find us on{" "}
+                <span className="underline text-blue-400">github</span>. Looking
+                for a more serious and career-based fefa community? The{" "}
+                <span className="underline text-blue-400">linkedin</span> group
+                will suit your needs. The{" "}
+                <span className="underline text-blue-400">discord server</span>{" "}
+                is probably the most active community. This is the place for you
+                if you&apos;re looking for a study partner to complete a course
+                together, support regarding a specific course or lesson, or just
+                any information related to Fefa in general. You can also follow
+                us on <span className="underline text-blue-400">twitter</span>.
+                As for my fellow redditors, I will see you on the{" "}
+                <span className="underline text-blue-400">subreddit</span>.
+              </Text>
+            </div>
+            <div className="w-full p-3 lg:w-1/2 flex justify-center items-center">
+              {/* <Image src={SocialsImage} alt="fefa_communities" /> */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${
+                  dark
+                    ? "/static/images/socials_light.svg"
+                    : "/static/images/socials_dark.svg"
+                }`}
+                alt="fefa_communities"
+                className="w-2/3"
+              />
+            </div>
+          </section>
+
           {/* newsletter section */}
           <section className="p-3 grid gap-8 grid-cols-1 md:grid-cols-2 mb-8">
             <div className={`${classes.customCard} p-8 rounded-md`}>
               <Text
-                className="text-3xl roboto mb-5 bg-gradient-to-r from-blue-500 to-teal-500 via-green-400"
+                className="text-3xl roboto font-semibold mb-5"
                 variant="gradient"
+                gradient={{ from: "teal", to: "blue" }}
               >
                 Wait, Before you go...
               </Text>
@@ -258,7 +440,8 @@ const Home: NextPage = () => {
             <div className={`${classes.customCard} p-8 rounded-md`}>
               <Text
                 variant="gradient"
-                className="text-3xl roboto mb-5 bg-gradient-to-l from-orange-400 to-teal-500 via-yellow-400"
+                className="text-3xl roboto font-semibold mb-5"
+                gradient={{ from: "teal", to: "green" }}
               >
                 You could also...
               </Text>
