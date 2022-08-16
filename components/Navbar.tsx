@@ -85,7 +85,7 @@ const Navbar = () => {
                           <span className="text-base uppercase font-medium cursor-pointer">
                             {r.label}
                           </span>
-                          <ChevronDown size={20} className="ml-1 text-white" />
+                          <ChevronDown size={20} className="ml-1" />
                         </Center>
                       }
                     >
