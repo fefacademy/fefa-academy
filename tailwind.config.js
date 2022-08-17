@@ -10,6 +10,11 @@ module.exports = {
           main: "#228be6",
         },
       },
+      fontFamily: {
+        roboto:
+          "'Roboto Slab', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        cursive: "Courgette, cursive",
+      },
     },
   },
   plugins: [],
