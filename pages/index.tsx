@@ -265,7 +265,7 @@ export default function Home() {
           </div>
           <div className="h-full w-full relative lg:w-1/2 flex justify-center items-center">
             <Image
-              src={useFefaAssets("images/socials", "svg")}
+              src={useFefaAssets("images/socials", "png")}
               alt="fefa_communities"
               width={468}
               height={485}
