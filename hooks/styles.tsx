@@ -16,9 +16,11 @@ export function useFefaColorScheme() {
   return { colorScheme, toggleColorScheme };
 }
 
-export function useFefaAssets(value: string) {
+export function useFefaAssets(value: string, ext: string) {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
-  return dark ? `/static/${value}_dark.mp4` : `/static/${value}_light.mp4`;
+  return dark
+    ? `/static/${value}_dark.${ext}`
+    : `/static/${value}_light.${ext}`;
 }
