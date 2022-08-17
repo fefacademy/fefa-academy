@@ -1,26 +1,10 @@
-import {
-  ColorScheme,
-  ColorSchemeProvider,
-  MantineProvider,
-  Paper,
-} from "@mantine/core";
-import { useHotkeys, useLocalStorageValue } from "@mantine/hooks";
+import { ColorSchemeProvider, MantineProvider, Paper } from "@mantine/core";
+import { useFefaColorScheme } from "hooks/styles";
 import type { AppProps } from "next/app";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import "../styles/globals.css";
+import "styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
-    key: "fefa-academy-color-scheme",
-    defaultValue: "dark",
-    getInitialValueInEffect: true,
-  });
-
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme == "dark" ? "light" : "dark"));
-
-  useHotkeys([["mod+J", () => toggleColorScheme()]]);
+  const { colorScheme, toggleColorScheme } = useFefaColorScheme();
   return (
     <>
       <ColorSchemeProvider
@@ -36,12 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             colorScheme,
           }}
         >
-          <Paper className="rounded-none">
-            <div className="font-sans ">
-              <Navbar />
-              <Component {...pageProps} />
-              <Footer />
-            </div>
+          <Paper className="rounded-none font-sans" component="main">
+            <Component {...pageProps} />
           </Paper>
         </MantineProvider>
       </ColorSchemeProvider>
