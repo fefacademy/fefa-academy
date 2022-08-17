@@ -1,18 +1,40 @@
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("../public/fonts/RobotoSlab-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Courgette";
-  src: url("../public/fonts/Courgette-Regular.ttf");
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-display: optional;
+    src: url(/fonts/RobotoSlab-Regular.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Courgette";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Courgette-Regular.woff2) format("woff2");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-roboto font-semibold;
+  }
+
+  h1 {
+    /* @apply text-5xl; */
+  }
+}
+
 @layer components {
+  .space-out-lg {
+    @apply space-y-6 lg:space-y-0 lg:space-x-6;
+  }
+
   .links {
     @apply text-lg cursor-pointer hover:text-blue-400;
   }
