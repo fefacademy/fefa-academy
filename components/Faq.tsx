@@ -53,7 +53,7 @@ const Faq = ({ data }: { data: Array<String[]> }) => {
   const { classes } = useStyles();
 
   return (
-    <div className="p-5 md:px-16 lg:px-36">
+    <div className="md:px-16 lg:px-36">
       <Accordion
         iconPosition="right"
         initialItem={0}
