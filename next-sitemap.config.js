@@ -1,13 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
-const config = {
-  siteUrl: process.env.SITE_URL || "https://example.com",
-  generateRobotsTxt: true, // (optional)
+module.exports = {
+  siteUrl: process.env.SITE_URL || "https://fefaacademy.me",
+  generateRobotsTxt: true,
   robotsTxtOptions: {
-    policies: [
-      { userAgent: "*", disallow: "/u" },
-      { userAgent: "*", disallow: "/join" },
-    ],
+    policies: [{ userAgent: "*", disallow: ["/u", "/join"] }],
   },
 };
-
-export default config;
