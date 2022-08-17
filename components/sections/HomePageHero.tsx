@@ -43,6 +43,7 @@ export default function HomePageHero() {
             width={640}
             height={360}
             className="rounded-2xl"
+            priority
           />
         </div>
       }
