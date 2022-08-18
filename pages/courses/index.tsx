@@ -74,7 +74,7 @@ const Index = () => {
       <section className={`${classes.showcase}`}>
         <Container className="max-w-7xl p-10 lg:px-16 flex flex-col lg:flex-row lg:pt-16 lg:items-center">
           <div className="w-full lg:w-1/2 space-y-7 ">
-            <Text className="text-5xl font-medium roboto">
+            <Text className="text-5xl font-semibold roboto">
               Level Up Your Skills 🚀{" "}
             </Text>
             <Text className={`text-xl`}>

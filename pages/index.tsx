@@ -1,27 +1,48 @@
-import { Blockquote, Button, Container, Text } from "@mantine/core";
-import type { NextPage } from "next";
-import Head from "next/head";
+import {
+  Blockquote,
+  Button,
+  Card,
+  CardSection,
+  Center,
+  Container,
+  Group,
+  Text,
+  TextInput,
+  useMantineColorScheme,
+} from "@mantine/core";
+import { NextLink } from "@mantine/next";
 import Image from "next/image";
 import Link from "next/link";
+
+import Faq from "components/Faq";
+import Page from "components/Page";
+import Timeline from "components/Timeline";
+import { useFefaAssets } from "hooks/styles";
 import {
-  Book,
-  Coin,
-  DeviceTv,
-  Flame,
-  Heartbeat,
-  HeartHandshake,
-  Notification,
-} from "tabler-icons-react";
-import Author from "../assets/author.jpg";
-import SealImage from "../assets/fefa_seal.png";
-import Faq from "../components/Faq";
-import Showcase from "../components/Showcase";
-import SupportCard from "../components/SupportCard";
-import Timeline from "../components/Timeline";
-import TitleCard from "../components/TitleCard";
-import { HomepageFAQData, ManifestoData } from "../lib/data";
-import { useStyles } from "../lib/shared";
-import styles from "../styles/Home.module.css";
+  AcademyBenefits,
+  HomepageCTAs,
+  HomepageFAQData,
+  ManifestoData,
+  WaysToSupport,
+} from "lib/data";
+import { useStyles } from "lib/shared";
+import styles from "styles/Home.module.css";
+
+import Author from "assets/author.jpg";
+import SealImage from "assets/fefa_seal.png";
+import HeartLogo from "assets/heart.png";
+import HomePageHero from "components/sections/HomePageHero";
+
+function GradientText(props: any) {
+  const { from, to, text } = props;
+
+  return (
+    <Text component="span" variant="gradient" gradient={{ from, to }} inherit>
+      {" "}
+      {text}{" "}
+    </Text>
+  );
+}
 
 const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
   return (
@@ -33,210 +54,272 @@ const InlineLink: React.FC<{ href: string; text: string }> = (props) => {
   );
 };
 
-const Home: NextPage = () => {
+export default function Home() {
   const { classes } = useStyles();
+  const { colorScheme } = useMantineColorScheme();
   const iconSize = 60;
+  const dark = colorScheme === "dark";
 
   return (
-    <div>
-      <Head>
-        <title>Fefa Academy | Free education for all</title>
-        <meta name="description" content="Free education for All" />
-      </Head>
+    <Page>
+      <Container className="w-full max-w-7xl p-5 space-y-10 ">
+        {/* Hero Section */}
+        <article className="md:px-5 lg:pt-8">
+          <HomePageHero />
+        </article>
 
-      <main>
-        <Container className="max-w-7xl p-0">
-          {/* showcase */}
-          <Showcase />
+        {/* Academy updates CTAs */}
+        <section className="md:p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {HomepageCTAs.map((item, i) => {
+            return (
+              <Card
+                key={i}
+                shadow={"xs"}
+                className={`flex items-center space-x-5 rounded-lg ${
+                  !dark && "border-2"
+                }`}
+              >
+                <div dangerouslySetInnerHTML={{ __html: item.icon }}></div>
+                <div className="h-full border-[1px] rounded-md"></div>
+                <div className="space-y-2">
+                  <Text
+                    className="text-lg roboto hover:underline text-blue-500 transition-all"
+                    component={NextLink}
+                    href={item.link}
+                  >
+                    {item.title}
+                  </Text>
+                  <Text>{item.body}</Text>
+                </div>
+              </Card>
+            );
+          })}
+        </section>
 
-          {/* title cards */}
-          <section className="p-8 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16">
-            <TitleCard
-              link="#"
-              body="Checkout the latest entries in the Fefa Academy Blog."
-              title="Read the latest blog"
-              icon={<Book size={60} />}
-            />
-            <TitleCard
-              link="#"
-              body="Find courses and lessons on your favorite topics."
-              title="Browse our courses"
-              icon={<DeviceTv size={60} />}
-            />
-            <TitleCard
-              link="#"
-              body="Get notified when new courses are released."
-              title="Subscribe to updates"
-              icon={<Notification size={60} />}
-            />
-          </section>
-        </Container>
-
-        {/* Manifesto */}
-        <section className="p-3 px-5">
-          <Container
-            className={`max-w-[78rem] relative h-full ${styles.scroll} rounded-sm p-5 md:p-7 text-black cursive`}
-          >
-            <Text className="text-2xl md:text-4xl font-semibold text-center mb-3">
-              The Fefa Academy Manifesto
+        {/* Why you'll love Fefa section */}
+        <section className="">
+          <Center>
+            <Text className="font-semibold hidden md:flex items-center text-4xl roboto mb-3">
+              Why you&apos;ll{" "}
+              <span className="mx-3">
+                <Image src={HeartLogo} alt="love"></Image>
+              </span>{" "}
+              Fefa Academy
             </Text>
-            <div className="grid gap-5 md:gap-8 grid-cols-1 md:grid-cols-2 p-3 md:p-8 md:px-14">
-              {ManifestoData.map((d, i) => {
-                return (
-                  <div key={i} className="space-y-2">
-                    <Text className="text-xl text-center md:text-2xl font-semibold">
-                      {d.title}
-                    </Text>
-                    <Blockquote
-                      color={"dark"}
-                      className="text-black p-1"
-                      p={"xs"}
-                      cite={d.cite}
-                      styles={{
-                        cite: {
-                          color: "black",
-                          fontWeight: "bold",
-                          fontSize: 16,
-                        },
-                      }}
-                    >
-                      {d.quote}
-                    </Blockquote>
-                    <Text className="text-lg md:text-xl">{d.body}</Text>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="relative flex justify-end md:absolute right-5 bottom-2">
-              <Image alt="wax-seal" src={SealImage} />
-            </div>
-          </Container>
+          </Center>
+          <h2 className="md:hidden text-3xl md:text-4xl text-center">
+            Why you&apos;ll ❤️ Fefa Academy
+          </h2>
+          <div className="grid gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {AcademyBenefits.map((item, idx) => {
+              return (
+                <div className="space-y-3" key={idx}>
+                  <div dangerouslySetInnerHTML={{ __html: item.icon }}></div>
+                  <Text className="text-2xl font-semibold">{item.title}</Text>
+                  <Text className="text-lg">{item.body}</Text>
+                </div>
+              );
+            })}
+          </div>
         </section>
-
-        {/* ways to support */}
-        <section className="w-full mb-10">
-          <Container className="max-w-7xl center flex-col p-0 md:p-3">
-            <Text className="text-4xl font-medium roboto text-center mb-5">
-              Ways you can support us
-            </Text>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-5">
-              <SupportCard
-                title="Donate"
-                icon={<Coin size={iconSize} className="text-green-400" />}
-              >
-                <Text>
-                  Fefa is a non-profit platform. It&apos;s maintained by the
-                  pockets of the owners and our awesome patreons. There are
-                  multiple ways that you could help us financially. Consider{" "}
-                  <InlineLink href="#" text="sponsoring us on github" /> or{" "}
-                  <InlineLink href="#" text="patreon" /> or{" "}
-                  <InlineLink href="#" text="buy me a coffee." /> You could also
-                  make a direct <InlineLink href="#" text="donation." />
-                </Text>
-              </SupportCard>
-              <SupportCard
-                title="Spread the love"
-                icon={<Heartbeat size={iconSize} className="text-orange-400" />}
-              >
-                <Text>
-                  If you feel that the academy has helped you in any way, help
-                  us grow by spreading the word, and the love. Share our links
-                  on your socials and so on. You can tweet you testimonial at{" "}
-                  <InlineLink href="#" text="@fefaacademy" /> and it will get
-                  featured in the testimonials section.
-                </Text>
-              </SupportCard>
-              <SupportCard
-                title="Contribute"
-                icon={
-                  <HeartHandshake size={iconSize} className="text-cyan-400" />
-                }
-              >
-                <Text>
-                  Contributions can be made in various ways. Provide feedback to
-                  us by taking the surveys and helping us improve. Have an idea,
-                  or some constructive criticism ? Don&apos;t hesitate to let us
-                  know, in our public{" "}
-                  <InlineLink href="#" text="discord server." /> See an issue on
-                  the site? <InlineLink href="#" text="Fix it on github" />
-                </Text>
-              </SupportCard>
-              <SupportCard
-                title="Keep seeding"
-                icon={<Flame size={iconSize} className="text-red-400" />}
-              >
-                <Text>
-                  All courses can be downloaded directly, free of charge. To
-                  avoid high server costs, the courses are distributed through
-                  various means including peer to peer sharing. If you do happen
-                  to download any course via torrenting, please do keep seeding.
-                </Text>
-              </SupportCard>
-            </div>
-          </Container>
-        </section>
-
-        {/* Timeline section */}
-        <section className={`py-5 pb-16 ${styles.dotted}`}>
-          <Timeline />
-        </section>
-
-        {/* From the creator section */}
-        <section className={`w-full mb-10 ${classes.showcase}`}>
-          <Container className="max-w-7xl p-0 md:p-5 flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 lg:space-y-0">
-            <div className="w-full lg:w-1/2 pt-5 lg:p-10 center flex-col">
-              <div className="w-1/2 mb-3">
-                <Image
-                  alt="victor ndaba"
-                  src={Author}
-                  className="rounded-full"
-                />
-              </div>
-              <Button variant="outline" radius={"xl"} size="lg">
-                Get in touch
-              </Button>
-            </div>
-            <div className="w-full lg:w-1/2 p-5 lg:p-0 pt-0">
-              <Text className="text-5xl font-medium roboto mb-5">
-                From the Founder
-              </Text>
-              <Text className={`text-xl`}>
-                Hi, 👋. I&apos;m Victor Ndaba, the founder of this small
-                academy. Fefa is like my perfect child: the Ruby to my Matz, the
-                GOT to my HBO. I created it because I don&apos;t believe that
-                free and high quality have to be mutually exclusive. Among other
-                things, I am primarily a self-taught software developer and I
-                have had to take a lot of courses to get to where I am today. I
-                noticed that there&apos;s always this pattern where most free
-                courses only offer you so much and the really good ones are not
-                free, and even then, they may not be enough. Which is why Fefa
-                is here,{" "}
-                <span className="font-medium">to break the wheel 😉.</span>
-              </Text>
-            </div>
-          </Container>
-        </section>
-
-        <Container className="max-w-7xl p-0 my-10">
-          <Text className="text-center text-4xl font-medium roboto">
-            Frequently asked questions
+        {/* The Fefa Academy Manifesto */}
+        <section
+          className={`relative h-full rounded-md overflow-hidden p-5 md:p-7 text-black cursive`}
+        >
+          <Image
+            src={"/static/images/parchment.jpg"}
+            alt="parchment"
+            layout="fill"
+            objectFit="cover"
+            objectPosition={"center"}
+            className="!z-[0]"
+          />
+          <Text className="relative text-2xl md:text-4xl font-semibold text-center !z-[10]">
+            The Fefa Academy Manifesto
           </Text>
-          <Faq data={HomepageFAQData} />
+          <div className="grid gap-5 md:gap-8 grid-cols-1 md:grid-cols-2 p-3 md:p-8 md:px-14 relative !z-10">
+            {ManifestoData.map((d, i) => {
+              return (
+                <div key={i} className="space-y-2">
+                  <Text className="text-xl text-center md:text-2xl font-semibold">
+                    {d.title}
+                  </Text>
+                  <Blockquote
+                    color={"dark"}
+                    className="text-black p-1"
+                    p={"xs"}
+                    cite={d.cite}
+                    styles={{
+                      cite: {
+                        color: "black",
+                        fontWeight: "bold",
+                        fontSize: 16,
+                      },
+                    }}
+                  >
+                    {d.quote}
+                  </Blockquote>
+                  <Text className="text-lg md:text-xl">{d.body}</Text>
+                </div>
+              );
+            })}
+          </div>
+          <div className="hidden relative md:flex justify-end md:absolute right-5 bottom-2">
+            <Image alt="wax-seal" src={SealImage} width={81} height={87} />
+          </div>
+        </section>
+
+        {/* Ways you can support us */}
+        <section>
+          <h2 className="text-center text-2xl md:text-4xl mb-5 md:mb-8">
+            Ways you can support us
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {WaysToSupport.map((item, i) => {
+              return (
+                <Card
+                  key={i}
+                  shadow={"xl"}
+                  className={`${classes.customCard} rounded-xl`}
+                  p="xl"
+                >
+                  <CardSection className="center flex-col p-2 pt-3">
+                    <div dangerouslySetInnerHTML={{ __html: item.icon }}></div>
+                    <Text className="mt-1 text-2xl font-medium roboto text-center">
+                      {item.title}{" "}
+                    </Text>
+                  </CardSection>
+                  <div dangerouslySetInnerHTML={{ __html: item.body }}></div>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+      </Container>
+
+      {/* Timeline section */}
+      <section className={`w-full py-4 mt-5 ${styles.dotted}`}>
+        <Timeline />
+      </section>
+
+      {/* From the creator section */}
+      <section className={`w-full mb-10 ${classes.showcase}`}>
+        <Container className="max-w-7xl p-0 md:p-5 flex flex-col lg:flex-row items-center space-y-8 lg:space-x-8 lg:space-y-0">
+          <div className="w-full lg:w-1/2 pt-5 lg:p-10 center flex-col">
+            <Image
+              alt="victor ndaba"
+              src={Author}
+              className="rounded-full mb-5"
+              width={260}
+              height={260}
+            />
+            <Button variant="outline" radius={"xl"} size="lg" className="mt-5">
+              Get in touch
+            </Button>
+          </div>
+          <div className="w-full lg:w-1/2 p-5 lg:p-0 pt-0">
+            <Text className="text-3xl text-center md:text-left md:text-5xl font-medium roboto mb-5">
+              From the Founder
+            </Text>
+            <Text className={`text-xl`}>
+              Hi, 👋. I&apos;m Victor Ndaba, the founder of this small academy.
+              Fefa is like my perfect child: the Ruby to my Matz, the GOT to my
+              HBO. I created it because I don&apos;t believe that free and high
+              quality have to be mutually exclusive. Among other things, I am
+              primarily a self-taught software developer and I have had to take
+              a lot of courses to get to where I am today. I noticed that
+              there&apos;s always this pattern where most free courses only
+              offer you so much and the really good ones are not free, and even
+              then, they may not be enough. Which is why Fefa is here,{" "}
+              <span className="font-medium">to break the wheel 😉.</span>
+            </Text>
+          </div>
         </Container>
-        {/* Technologies and subjects */}
-        {/* Fefa roadmap */}
-        {/* Become part of the fefa :: community platforms section */}
-        {/* benefits of joining */}
-        {/* what we offer */}
-        {/* learn at your own pace */}
-        {/* project based learning on steroids */}
+      </section>
 
-        {/* fefa hero image */}
-        {/* signup/in */}
-        {/* newsletter */}
-      </main>
-    </div>
+      <Container className="max-w-7xl p-5 space-y-10">
+        {/* Join community section */}
+        <section className="flex flex-col-reverse lg:flex-row justify-center items-center mb-5">
+          <div className="w-full lg:w-1/2 mt-5 lg:mt-0">
+            <h2 className="text-4xl mb-5">Join the community...</h2>
+            <Text className="text-xl">
+              As stated above, Fefa is more than just another online academy. We
+              are a community, a family more like, that will help you learn
+              together and grow together. The Fefa Academy community is spread
+              out over various social platforms and even on the Academy website
+              itself. For code-related projects and programming in general, find
+              us on <span className="underline text-blue-400">github</span>.
+              Looking for a more serious and career-based fefa community? The{" "}
+              <span className="underline text-blue-400">linkedin</span> group
+              will suit your needs. The{" "}
+              <span className="underline text-blue-400">discord server</span> is
+              probably the most active community. This is the place for you if
+              you&apos;re looking for a study partner to complete a course
+              together, support regarding a specific course or lesson, or just
+              any information related to Fefa in general. You can also follow us
+              on <span className="underline text-blue-400">twitter</span>. As
+              for my fellow redditors, I will see you on the{" "}
+              <span className="underline text-blue-400">subreddit</span>.
+            </Text>
+          </div>
+          <div className="h-full w-full relative lg:w-1/2 flex justify-center items-center">
+            <Image
+              src={useFefaAssets("images/socials", "png")}
+              alt="fefa_communities"
+              width={468}
+              height={485}
+            />
+          </div>
+        </section>
+
+        {/* newsletter section */}
+        <section className="grid gap-8 grid-cols-1 md:grid-cols-2 mb-8">
+          <div
+            className={`${classes.customCard} p-5  md:p-8 rounded-md shadow-md`}
+          >
+            <Text className="text-3xl roboto font-semibold mb-5">
+              Before you go...
+            </Text>
+            <Text className="text-2xl mb-2">Subscribe to our newsletter</Text>
+            <Text color={"dimmed"}>
+              You will never miss important updates, latest news and community
+              QA and sessions. Our newsletter is once a week, every Sunday
+            </Text>
+            <Group spacing={"md"} className="py-2" align="end">
+              <TextInput
+                className="w-full md:w-2/3"
+                placeholder="lorenzo.vonmatterhorn@himym.com"
+                size="lg"
+              />
+              <Button size="lg" className="!bg-blue-500">
+                Subscribe
+              </Button>
+            </Group>
+          </div>
+          <div
+            className={`${classes.customCard} p-5 md:p-8 rounded-md shadow-md`}
+          >
+            <Text className="text-3xl roboto font-semibold mb-5">
+              You could also...
+            </Text>
+            <Text className="text-2xl mb-2">Sign the guestbook</Text>
+            <Text color={"dimmed"} className="mb-2">
+              Leave a message for future visitors. It can be anything from a
+              review to an inside-joke to an awesome one-liner.{" "}
+              <span className="font-bold">Go ahead, make my day!</span>
+            </Text>
+            <Button size="lg" variant="outline" className="rounded-full">
+              Guestbook
+            </Button>
+          </div>
+        </section>
+
+        {/* Faq section */}
+        <h2 className="text-center text-3xl md:text-4xl font-medium">
+          Frequently asked questions
+        </h2>
+        <Faq data={HomepageFAQData} />
+      </Container>
+    </Page>
   );
-};
-
-export default Home;
+}

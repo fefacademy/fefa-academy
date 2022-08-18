@@ -133,7 +133,7 @@ const DonatePage = () => {
       <Container className=" max-w-7xl ">
         <section className="center flex-col lg:flex-row mb-8 p-3 space-y-8 lg:space-y-0 lg:space-x-5">
           <div className="w-full lg:w-1/2 space-y-3">
-            <Text className="text-5xl font-medium roboto mb-5">
+            <Text className="text-5xl font-semibold tracking-wide roboto mb-5">
               Help us grow
             </Text>
             <Text className="text-xl">

@@ -8,13 +8,13 @@ class FefaDocument extends Document {
           <link
             rel="preload"
             as="font"
-            href="/fonts/RobotoSlab-Regular.ttf"
+            href="/fonts/RobotoSlab-Regular.woff2"
             crossOrigin="anonymous"
           ></link>
           <link
             rel="preload"
             as="font"
-            href="/fonts/Courgette-Regular.ttf"
+            href="/fonts/Courgette-Regular.woff2"
             crossOrigin="anonymous"
           ></link>
           <link rel="icon" href="/favicon.ico" />
