@@ -4,7 +4,7 @@ import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 export function useFefaColorScheme() {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "fefa-academy-color-scheme",
-    defaultValue: "light",
+    defaultValue: "dark",
     getInitialValueInEffect: true,
   });
 
