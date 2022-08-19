@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "npx next-sitemap",
     "start": "next start",
     "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
     "check:types": "tsc --pretty --noEmit",
     "check:fmt": "prettier --check ./**/*.{js,ts,jsx,tsx}",
     "format": "prettier --write ./**/*.{js,ts,jsx,tsx}",
