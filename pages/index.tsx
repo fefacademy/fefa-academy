@@ -122,7 +122,6 @@ export default function Home() {
             })}
           </div>
         </section>
-
         {/* The Fefa Academy Manifesto */}
         <section
           className={`relative h-full rounded-md overflow-hidden p-5 md:p-7 text-black cursive`}

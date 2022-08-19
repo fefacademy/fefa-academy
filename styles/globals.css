@@ -35,12 +35,12 @@
     @apply space-y-6 lg:space-y-0 lg:space-x-6;
   }
 
-  .links {
-    @apply text-lg cursor-pointer hover:text-blue-400;
+  .link {
+    @apply text-lg cursor-pointer font-medium hover:text-blue-400 hover:scale-105;
   }
 
   .small-link {
-    @apply text-base uppercase font-medium cursor-pointer hover:text-blue-500 hover:scale-105;
+    @apply text-lg font-medium cursor-pointer hover:text-blue-500 hover:scale-105;
   }
 
   .center {

@@ -23,7 +23,7 @@ export default function Page(props: pageProps) {
 
   const meta = {
     title: "Fefa Academy | Free Education for All.",
-    description: `An online academy with a focus on availing knowledge to everyone, for free. Free in every sense of the word.`,
+    description: `Fefa is an online academy with a focus on availing knowledge to everyone, for free. Free in every sense of the word.`,
     image: "https://fefaacademy.me/static/images/fefa-banner.png",
     type: "website",
     ...customMeta,

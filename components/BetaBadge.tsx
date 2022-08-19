@@ -14,7 +14,9 @@ const enum Size {
 
 const BetaBadge: React.FC<BadgeProps> = (props) => {
   return (
-    <div className="rounded-md bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-1 uppercase self-start mx-1">
+    <div
+      className={`rounded-md bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-1 uppercase self-start mx-1 ${props.className}`}
+    >
       <Text
         className={`${
           props.size === "small" ? "text-xs" : "text-xs"

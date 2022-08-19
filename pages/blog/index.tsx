@@ -1,7 +1,15 @@
-import React from "react";
+import Page from "components/Page";
 
-const index = () => {
-  return <div>index</div>;
-};
-
-export default index;
+export default function Blog() {
+  return (
+    <Page
+      customMeta={{
+        title: "Blog | Fefa Academy",
+        description:
+          "General blogs about software engineering, design, computer graphics and much more!",
+      }}
+    >
+      <h1>The Fefa Academy Blog</h1>
+    </Page>
+  );
+}
