@@ -49,34 +49,42 @@ const useStyles = createStyles((theme, _params, getRef) => {
   };
 });
 
-const Faq = ({ data }: { data: Array<String[]> }) => {
+const Faq = ({ data }: { data: Array<string[]> }) => {
   const { classes } = useStyles();
 
   return (
     <div className="md:px-16 lg:px-36">
       <Accordion
-        iconPosition="right"
-        initialItem={0}
-        classNames={{
-          item: classes.item,
-          control: classes.control,
-          icon: classes.icon,
-          contentInner: classes.content,
-        }}
-        icon={
+        chevronPosition="right"
+        defaultValue="reset-password"
+        chevronSize={50}
+        variant="separated"
+        // disableChevronRotation
+        chevron={
           <ThemeIcon radius="xl" className={classes.gradient} size={32}>
             <Plus size={18} />
           </ThemeIcon>
         }
+        classNames={{
+          item: classes.item,
+          control: classes.control,
+          icon: classes.icon,
+        }}
         styles={{
           label: {
             fontSize: 20,
           },
+          chevron: {
+            "&[data-rotate]": {
+              transform: "rotate(45deg)",
+            },
+          },
         }}
       >
         {data.map((d, i) => (
-          <Accordion.Item key={i} label={d[0]} className="text-lg">
-            {d[1]}
+          <Accordion.Item key={i} className="text-lg" value={d[0]}>
+            <Accordion.Control>{d[0]}</Accordion.Control>
+            <Accordion.Panel>{d[1]}</Accordion.Panel>
           </Accordion.Item>
         ))}
       </Accordion>
