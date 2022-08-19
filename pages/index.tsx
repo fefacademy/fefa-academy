@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <Page>
-      <Container className="w-full max-w-7xl p-5 space-y-10 ">
+      <main className="mx-auto w-full max-w-7xl p-5 space-y-10 ">
         {/* Hero Section */}
         <article className="md:px-5 lg:pt-8">
           <HomePageHero />
@@ -195,7 +195,7 @@ export default function Home() {
             })}
           </div>
         </section>
-      </Container>
+      </main>
 
       {/* Timeline section */}
       <section className={`w-full py-4 mt-5 ${styles.dotted}`}>
