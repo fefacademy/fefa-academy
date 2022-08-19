@@ -36,3 +36,5 @@ yarn-error.log*
 
 # contrived
 TODO.*
+robots.txt
+sitemap*.xml

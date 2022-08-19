@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "npx next-sitemap",
     "start": "next start",
     "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
     "check:types": "tsc --pretty --noEmit",
     "check:fmt": "prettier --check ./**/*.{js,ts,jsx,tsx}",
     "format": "prettier --write ./**/*.{js,ts,jsx,tsx}",
@@ -25,6 +27,7 @@
     "@mantine/rte": "^4.2.12",
     "@mantine/spotlight": "^4.2.12",
     "@modulz/radix-icons": "^4.0.0",
+    "@next/bundle-analyzer": "^12.2.5",
     "dayjs": "^1.11.0",
     "next": "12.1.5",
     "next-sitemap": "^3.1.18",
