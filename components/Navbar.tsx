@@ -56,6 +56,7 @@ export default function Navbar() {
                     key={r.label}
                     trigger="hover"
                     exitTransitionDuration={0}
+                    width={130}
                   >
                     <Menu.Target>
                       <div className={`cursor-pointer text-lg font-medium`}>
