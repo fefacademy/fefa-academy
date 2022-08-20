@@ -1,5 +1,6 @@
 import { ColorSchemeProvider, MantineProvider, Paper } from "@mantine/core";
 import { useFefaColorScheme } from "hooks/styles";
+import { useFefaTheme } from "lib/hooks";
 import type { AppProps } from "next/app";
 import "styles/globals.css";
 
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             fontFamily: "inherit",
             loader: "dots",
             colorScheme,
+            ...useFefaTheme(),
           }}
         >
           <Paper className="rounded-none font-sans" component="main">

@@ -1,4 +1,4 @@
-import { Menu, Paper, Tooltip } from "@mantine/core";
+import { Center, Menu, Paper, Tooltip } from "@mantine/core";
 import { NextLink } from "@mantine/next";
 import { AvatarIcon, GitHubLogoIcon, RocketIcon } from "@modulz/radix-icons";
 import Image from "next/image";
@@ -53,19 +53,20 @@ export default function Navbar() {
               if (menuItems) {
                 return (
                   <Menu
-                    size={"sm"}
                     key={r.label}
                     trigger="hover"
-                    control={
-                      <div className="center">
-                        <span className="text-lg font-medium cursor-pointer">
-                          {r.label}
-                        </span>
-                        <ChevronDown size={20} className="ml-1" />
-                      </div>
-                    }
+                    exitTransitionDuration={0}
+                    width={130}
                   >
-                    {menuItems}
+                    <Menu.Target>
+                      <div className={`cursor-pointer text-lg font-medium`}>
+                        <Center>
+                          <span className={`mr-1`}>{r.label}</span>
+                          <ChevronDown size={20} />
+                        </Center>
+                      </div>
+                    </Menu.Target>
+                    <Menu.Dropdown>{menuItems}</Menu.Dropdown>
                   </Menu>
                 );
               }
