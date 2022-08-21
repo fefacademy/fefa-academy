@@ -11,6 +11,7 @@ interface pageProps {
     description?: string;
     image?: string;
     type?: string;
+    keywords?: string;
   };
   children?: React.ReactNode;
 }
@@ -26,6 +27,8 @@ export default function Page(props: pageProps) {
     description: `Fefa is an online academy with a focus on availing knowledge to everyone, for free. Free in every sense of the word.`,
     image: "https://fefaacademy.me/static/images/fefa-banner.png",
     type: "website",
+    keywords:
+      "fefa, academy, free courses, online courses, free education, fefa academy",
     ...customMeta,
   };
 
@@ -34,6 +37,7 @@ export default function Page(props: pageProps) {
       <Head>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
+        <meta name="keywords" content={meta.keywords} />
         <meta
           property="og:url"
           content={`https://fefaacademy.me${router.asPath}`}
