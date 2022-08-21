@@ -1,5 +1,4 @@
 import {
-  Blockquote,
   Button,
   Card,
   CardSection,
@@ -20,19 +19,19 @@ import {
   AcademyBenefits,
   HomepageCTAs,
   HomepageFAQData,
-  ManifestoData,
   WaysToSupport,
 } from "lib/data";
 import { useGlobalStyles } from "lib/shared";
 import styles from "styles/Home.module.css";
 
 import Author from "assets/author.jpg";
-import SealImage from "assets/fefa_seal.png";
 import HeartLogo from "assets/heart.png";
 import HomePageHero from "components/sections/HomePageHero";
+import Manifesto from "components/sections/Manifesto";
+import { fetchContent } from "lib/strapi";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home({ data }: any) {
   const { classes } = useGlobalStyles();
   const { colorScheme } = useMantineColorScheme();
   const iconSize = 60;
@@ -103,7 +102,7 @@ export default function Home() {
         </section>
 
         {/* The Fefa Academy Manifesto */}
-        <section
+        {/* <section
           className={`relative h-full rounded-md overflow-hidden p-5 md:p-7 text-black cursive`}
         >
           <Image
@@ -150,7 +149,8 @@ export default function Home() {
           <div className="hidden relative md:flex justify-end md:absolute right-5 bottom-2">
             <Image alt="wax-seal" src={SealImage} width={81} height={87} />
           </div>
-        </section>
+        </section> */}
+        <Manifesto data={data.manifesto} />
 
         {/* Ways you can support us */}
         <section>
@@ -310,4 +310,16 @@ export default function Home() {
       </div>
     </Page>
   );
+}
+
+export async function getStaticProps() {
+  const manifesto = await fetchContent("manifesto");
+
+  return {
+    props: {
+      data: {
+        manifesto,
+      },
+    },
+  };
 }
