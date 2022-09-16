@@ -11,6 +11,13 @@
   }
 
   @font-face {
+    font-family: "Roboto Slab Bold";
+    font-style: normal;
+    font-display: optional;
+    src: url(/fonts/RobotoSlab-Bold.woff2) format("woff2");
+  }
+
+  @font-face {
     font-family: "Courgette";
     font-style: normal;
     font-display: swap;
