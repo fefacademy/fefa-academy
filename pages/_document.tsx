@@ -13,13 +13,19 @@ export default class _Document extends Document {
             as="font"
             href="/fonts/RobotoSlab-Regular.woff2"
             crossOrigin="anonymous"
-          ></link>
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/RobotoSlab-Bold.woff2"
+            crossOrigin="anonymous"
+          />
           <link
             rel="preload"
             as="font"
             href="/fonts/Courgette-Regular.woff2"
             crossOrigin="anonymous"
-          ></link>
+          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
