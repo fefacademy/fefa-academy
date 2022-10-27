@@ -38,7 +38,7 @@ export const useStyles = createStyles((theme) => ({
 export const useGlobalStyles = createStyles((theme) => {
   return {
     h1: {
-      fontSize: 55,
+      fontSize: 60,
       lineHeight: 1.35,
       fontFamily: "Roboto Slab",
       fontWeight: "bold",
