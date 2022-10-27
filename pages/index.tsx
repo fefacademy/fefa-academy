@@ -75,7 +75,7 @@ export default function Home({ data }: any) {
         {/* Why you'll love Fefa section */}
         <section className="">
           <Center>
-            <h2 className="font-semibold hidden md:flex items-center text-4xl roboto mb-4">
+            <h2 className="hidden md:flex items-center text-4xl mb-4">
               Why you&apos;ll{" "}
               <span className="mx-3">
                 <Image src={HeartLogo} alt="love"></Image>
@@ -158,7 +158,7 @@ export default function Home({ data }: any) {
             </Button>
           </div>
           <div className="w-full lg:w-1/2 p-5 lg:p-0 pt-0">
-            <h5 className="text-3xl text-center md:text-left md:text-5xl font-medium roboto mb-5">
+            <h5 className="text-3xl text-center md:text-left md:text-4xl font-medium roboto mb-5">
               From the Founder
             </h5>
             <Text size={"xl"}>
