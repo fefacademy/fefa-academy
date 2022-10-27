@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         roboto:
           "'Roboto Slab', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        robotoBold:
+          "'Roboto Slab Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        Inter: "'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         cursive: "Courgette, cursive",
       },
     },
