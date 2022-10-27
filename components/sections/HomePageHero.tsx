@@ -32,7 +32,7 @@ export default function HomePageHero() {
 
   return (
     <>
-      <div className="flex py-10 justify-center items-center flex-col space-y-6 mb-5">
+      <div className="flex py-10 justify-center items-center flex-col space-y-6 mb-5 text-center">
         <h1 className="text-4xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-blue-500 via-green-500 !leading-snug">
           Free education for all
         </h1>
@@ -40,7 +40,7 @@ export default function HomePageHero() {
           return (
             <h2
               key={index}
-              className={`text-6xl !leading-snug transition-all ${
+              className={`text-3xl md:text-6xl !leading-snug transition-all ${
                 current === index ? `animatedText block` : "hidden"
               }`}
             >
@@ -48,12 +48,12 @@ export default function HomePageHero() {
             </h2>
           );
         })}
-        <p className="text-2xl !mb-5">
-          Written lessons, weekly updates, state of the community and much more.
-          Jump right in and start reading about topics that interest you. Lorem
-          ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, nemo!
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus,
-          dolorum.
+        <p className="text-xl md:text-2xl !mb-5 text-center">
+          Fefa Academy is an online learning platform providing free and high
+          quality education for all. We are essentially on a mission to make
+          knowledge open source. Get started now by joining our community of
+          students and instructors who are passionate about learning and
+          teaching.
         </p>
         <div className="flex flex-col uppercase md:flex-row my-5 space-y-8 md:space-x-8 md:space-y-0">
           <Button
@@ -78,24 +78,26 @@ export default function HomePageHero() {
       </div>
       <HeroContainer
         left={
-          <div className="w-full space-y-5">
-            <h2 className="text-5xl !leading-snug">Our plan is simple:</h2>
+          <div className="w-full space-y-7">
+            <h2 className="text-3xl md:text-5xl !leading-snug">
+              Our plan is simple:
+            </h2>
 
-            <div className="flex flex-col text-2xl space-y-4">
-              <Group>
+            <div className="flex flex-col text-2xl space-y-5">
+              <Group noWrap>
                 <IconCircleCheck color="teal" /> To provide free content
               </Group>
-              <Group>
+              <Group noWrap>
                 <IconCircleCheck color="teal" /> To make sure said content is of
                 high quality
               </Group>
-              <Group>
-                <IconCircleCheck color="teal" /> To create an amalzing community
-              </Group>
-              <Group>
+              <Group noWrap>
                 <IconCircleCheck color="teal" /> And look cool doing it
               </Group>
             </div>
+            <Button size="xl" variant="outline" radius={"xl"} uppercase>
+              roadmap
+            </Button>
           </div>
         }
         right={
