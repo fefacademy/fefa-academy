@@ -13,8 +13,15 @@
   @font-face {
     font-family: "Roboto Slab Bold";
     font-style: normal;
-    font-display: optional;
+    font-display: swap;
     src: url(/fonts/RobotoSlab-Bold.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/Inter-Regular.woff2) format("woff2");
   }
 
   @font-face {
@@ -26,11 +33,7 @@
 
   h1,
   h2 {
-    @apply font-roboto font-semibold;
-  }
-
-  h1 {
-    /* @apply text-5xl; */
+    @apply font-robotoBold;
   }
 }
 
@@ -72,8 +75,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -86,7 +89,8 @@ a {
 }
 
 .roboto {
-  font-family: "Roboto Slab", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto Slab Bold", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
 }
 
 .cursive {
